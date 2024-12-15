@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>EL VERANO</title>
+</head>
+<body>
+    
+    <!-- Criando o cabeçalho do site -->
+
+    <header>
+        <nav class="nav-bar">
+            <div class="logo">
+                <h1> EL VERANO </h1>
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="index.html" class="nav-link"> Menu </a></li>
+                    <li class="nav-item"><a href="habilidades.html" class="nav-link"> Produtos </a></li>
+                    <li class="nav-item"><a href="projetos.html" class="nav-link"> Favoritos</a></li>
+                </ul>
+            </div>
+            <div class="baixar-button">
+                <button><a href="#"> Baixar App </a></button>
+            </div>
+
+            <div class="mobile-menu-icon">
+                <button onclick="menuAbrir()"><img class="icon" src="./assets/menu_white_36dp.svg" alt=""></button>
+            </div>
+        </nav>
+
+        <!-- Criando o menu mobile -->
+
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="index.html" class="nav-link"> Menu </a></li>
+                <li class="nav-item"><a href="habilidades.html" class="nav-link"> Produtos </a></li>
+                <li class="nav-item"><a href="projetos.html" class="nav-link"> Favoritos </a></li>
+            </ul>
+
+            <div class="baixar-button">
+                <button><a href="#"> Baixar App</a></button>
+            </div>
+        </div>
+    </header>
+    <script src="script.js"></script>
+
+    <main class="apresentacao">
+
+        <section class="apresentacao__conteudo">
+            <div class="apresentacao__conteudo__centralizando">
+                <h1 class="apresentacao__conteudo__titulo"> O QUE É A EL VERANO? </h1>
+                <p class="apresentacao__conteudo__texto"> Oferecer produtos sadáveis e refrescantes que promovam bem-estar e satisfação, utilizando ingredientes naturais e de alta qualidade. </p>
+            </div>
+            <button class="btn__cardapio">CARDÁPIO</button>
+        </section>
+    </main>
+    <hr>
+    <footer>
+        <h2>CONTATO</h2>
+    </footer>
+</body>
+</html>

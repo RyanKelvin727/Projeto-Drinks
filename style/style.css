@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+
+:root {
+    --cor-primaria: #fff;
+    --cor-secundaria: #0187a7;
+    --cor-terciaria: #000000;
+    --cor-cabecalho: #24252a;
+    --cor-boxshadow-rodape: #464646;
+    --cor-hover: #c7e1e7;
+
+    --fonte-principal: 'Inter', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* Codes para arrumar o cabeçalho de navegação*/
+
+header {
+    background-color: var(--cor-cabecalho);
+    box-shadow: 0px 3px 10px var(--cor-boxshadow-rodape);
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 6rem;
+    font-family: var(--fonte-principal);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    color: var(--cor-primaria);
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: var(--cor-primaria);
+    font-weight: 400;
+}
+
+.baixar-button button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: var(--cor-secundaria);
+}
+
+.baixar-button button a {
+    text-decoration: none;
+    color: var(--cor-primaria);
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.mobile-menu-icon {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+/* Codes do main do site */
+
+body {
+    box-sizing: border-box;
+    color: var(--cor-terciaria);
+}
+
+.apresentacao {
+    background-color: rgb(247, 228, 194);
+    height: 550px;
+    padding: 3% 15%;
+    align-items: center;
+    gap: 82px;
+}
+
+.apresentacao__conteudo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.apresentacao__conteudo__centralizando {
+    margin-top: 100px;
+}
+
+.apresentacao__conteudo__titulo {
+    font-size: 2.25rem;
+    font-family: var(--fonte-principal);
+    color: orange;
+}
+
+.apresentacao__conteudo__texto {
+    font-size: 1.5rem;
+    font-family: var(--fonte-principal);
+}
+
+.btn__cardapio {
+    font-size: 1.5rem;
+    background-color: orange;
+    font-family:  var(--fonte-principal);
+    border: none;
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 50%;
+    height: 50px;
+}
+
+footer{
+    background-color: rgb(247, 228, 194);
+}
+
+/* Codes de responsividade */
+
+@media screen and (max-width: 730px) {
+
+    .nav-bar {
+        padding: 1.5rem 4rem;
+    }
+
+    .nav-item {
+        display: none;
+        font-family: var(--fonte-principal);
+    }
+    
+    .baixar-button {
+        display: none;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .mobile-menu-icon button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    .mobile-menu .nav-item {
+        display: block;
+        padding-top: 1.2rem;
+    }
+
+    .mobile-menu .baixar-button {
+        display: block;
+        padding: 1rem 2rem;
+    }
+
+    .mobile-menu .baixar-button button {
+        width: 100%;
+    }
+
+    .open {
+        display: block;
+    }
+}
+
+@media (max-width: 730px) {
+    
+    .apresentacao {
+        height: 800px;
+        flex-direction: column-reverse;
+        padding: 10%;
+    }
+
+    .apresentacao__conteudo {
+        width: auto;
+        height: 100%;
+    }
+
+    .btn__cardapio {
+        font-size: 1.5rem;
+        background-color: orange;
+        font-family:  var(--fonte-principal);
+        border: none;
+        margin: 0 auto;
+        margin-top: 90px;
+        width: 100%;
+        height: 50px;
+    }
+}
