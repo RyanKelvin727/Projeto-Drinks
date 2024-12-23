@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>EL VERANO</title>
 </head>
 <body>
@@ -13,53 +14,27 @@
     <header>
         <nav class="nav-bar">
             <div class="logo">
-                <h1> EL VERANO </h1>
+                <h1> EL <br>VERANO </h1>
+            </div>
+            <div class="conteudo-barra-pesquisa">
+                <div class="caixa-pesquisa">
+                    <input type="text" class="barra-pesquisa" placeholder="O que você está procurando?">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
             </div>
             <div class="nav-list">
                 <ul>
-                    <li class="nav-item"><a href="index.html" class="nav-link"> Menu </a></li>
-                    <li class="nav-item"><a href="habilidades.html" class="nav-link"> Produtos </a></li>
-                    <li class="nav-item"><a href="projetos.html" class="nav-link"> Favoritos</a></li>
+                    <li class="nav-item"><a href="#home" class="nav-link"> Nossa Marca </a></li>
+                    <li class="nav-item"><a href="#ofertas" class="nav-link"> Ofertas </a></li>
+                    <li class="nav-item"><a href="#cardapio" class="nav-link"> Cardápio</a></li>
                 </ul>
             </div>
-            <div class="baixar-button">
-                <button><a href="#"> Baixar App </a></button>
-            </div>
-
-            <div class="mobile-menu-icon">
-                <button onclick="menuAbrir()"><img class="icon" src="./assets/menu_white_36dp.svg" alt=""></button>
-            </div>
         </nav>
-
-        <!-- Criando o menu mobile -->
-
-        <div class="mobile-menu">
-            <ul>
-                <li class="nav-item"><a href="index.html" class="nav-link"> Menu </a></li>
-                <li class="nav-item"><a href="habilidades.html" class="nav-link"> Produtos </a></li>
-                <li class="nav-item"><a href="projetos.html" class="nav-link"> Favoritos </a></li>
-            </ul>
-
-            <div class="baixar-button">
-                <button><a href="#"> Baixar App</a></button>
-            </div>
-        </div>
     </header>
+
     <script src="script.js"></script>
 
-    <main class="apresentacao">
-
-        <section class="apresentacao__conteudo">
-            <div class="apresentacao__conteudo__centralizando">
-                <h1 class="apresentacao__conteudo__titulo"> O QUE É A EL VERANO? </h1>
-                <p class="apresentacao__conteudo__texto"> Oferecer produtos sadáveis e refrescantes que promovam bem-estar e satisfação, utilizando ingredientes naturais e de alta qualidade. </p>
-            </div>
-            <button class="btn__cardapio">CARDÁPIO</button>
-        </section>
-    </main>
-    <hr>
     <footer>
-        <h2>CONTATO</h2>
     </footer>
 </body>
 </html>
