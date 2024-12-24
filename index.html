@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>EL VERANO</title>
 </head>
@@ -13,9 +14,15 @@
 
     <header>
         <nav class="nav-bar">
-            <div class="logo">
-                <h1> EL <br>VERANO </h1>
+            <div class="teste">
+                <div class="logo">
+                    <h1> EL <br>VERANO </h1>
+                </div>
+                <div class="mobile-menu-icon">
+                    <button onclick="menuAbrir()"><img class="icon" src=".assets/bars-solid.svg" alt=""></button>
+                </div>
             </div>
+           
             <div class="conteudo-barra-pesquisa">
                 <div class="caixa-pesquisa">
                     <input type="text" class="barra-pesquisa" placeholder="O que você está procurando?">
@@ -29,9 +36,27 @@
                     <li class="nav-item"><a href="#cardapio" class="nav-link"> Cardápio</a></li>
                 </ul>
             </div>
-        </nav>
-    </header>
 
+        </nav>
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="#home" class="nav-link"><i class="fa-solid fa-address-card"></i>Nossa Marca</a></li>
+                <li class="nav-item"><a href="#ofertas" class="nav-link"><i class="fa-solid fa-tag"></i>Ofertas</a></li>
+                <li class="nav-item"><a href="#cardapio" class="nav-link"><i class="fa-solid fa-martini-glass-citrus"></i>Cardápio</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div id="home">
+            <h1>Nossa Marca</h1>
+        </div>
+        <div id="ofertas">
+            <h1>Ofertas</h1>
+        </div>
+        <div id="cardapio">
+            <h1>Cardapio</h1>
+        </div>
+    </main>
     <script src="script.js"></script>
 
     <footer>

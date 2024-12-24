@@ -1,0 +1,17 @@
+#home {
+    width: 99vw;
+    height: 90vh;
+    background-color: gray;
+}
+
+#ofertas {
+    width: 99vw;
+    height:90vh;
+    background-color:bisque ;
+}
+
+#cardapio {
+    width: 99vw;
+    height:90vh;
+    background-color: blueviolet;
+}

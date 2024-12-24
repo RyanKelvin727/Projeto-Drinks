@@ -20,9 +20,10 @@
 /* Codes para arrumar o cabeçalho de navegação*/
 
 header {
+    position: sticky;
+    top: 0;
     width: 100%;
     background-color: var(--cor-primaria);
-    box-shadow: 0px 1px 10px var(--cor-boxshadow-rodape);
 }
 
 .nav-bar {
@@ -99,6 +100,21 @@ header {
     font-weight: 400;
 }
 
+/* Estilizando menu mobile */
+
+.icon{
+    width: 30px;
+    height: 30px;
+}
+
+.mobile-menu-icon {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
 /* Codes do main do site */
 
 body{
@@ -133,4 +149,58 @@ body{
         display: none;
         font-family: var(--fonte-principal);
     }
+
+    .teste{
+        display: flex;
+        gap: 70%;
+    }
+
+    .mobile-menu-icon {
+        position: relative;
+        display: block;
+    }
+
+    .mobile-menu-icon button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .mobile-menu{
+        position: absolute;
+        right: 0;
+        width: 50vw;
+        height: 36vh;
+        background: var(--cor-primaria);
+    }
+
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    .mobile-menu .nav-item {
+        display: flex;
+        justify-content: center;
+        padding: 2rem 0rem 2rem 0rem;
+    }
+
+    .mobile-menu .nav-item:hover{
+        background-color: #f1f2f3;
+    }
+
+    .mobile-menu .nav-item a:hover{
+        font-size: 20px;
+    }
+
+    .nav-item i{
+        margin-right: 10px;
+    }
+
+    .open {
+        display: block;
+    }
+
 }
