@@ -24,6 +24,7 @@ header {
     top: 0;
     width: 100%;
     background-color: var(--cor-primaria);
+    z-index: 3;
 }
 
 .nav-bar {
@@ -93,6 +94,10 @@ header {
     margin: 0 15px;
 }
 
+.nav-item i{
+    margin-right: 5px;
+}
+
 .nav-link {
     text-decoration: none;
     font-size: 1.15rem;
@@ -113,12 +118,6 @@ header {
 
 .mobile-menu {
     display: none;
-}
-
-/* Codes do main do site */
-
-body{
-    background: #f1f2f3;
 }
 
 /* Codes de responsividade */

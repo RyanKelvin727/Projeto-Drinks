@@ -1,17 +1,180 @@
-#home {
-    width: 99vw;
-    height: 90vh;
-    background-color: gray;
+:root {
+    --cor-primaria: #fff;
+    --cor-secundaria: #0187a7;
+    --cor-terciaria: #000000;
+    --cor-body: #424244;
+    --cor-boxshadow-rodape: #464646;
+    --cor-hover: #c7e1e7;
+
+    --fonte-principal: 'Inter', sans-serif;
 }
 
-#ofertas {
-    width: 99vw;
-    height:90vh;
-    background-color:bisque ;
+/* Codes do main do site */
+
+body{
+    background: #f1f2f3;
 }
 
-#cardapio {
+.home {
+    display: flex;
+    justify-content: center;
+    justify-content: center;
     width: 99vw;
-    height:90vh;
-    background-color: blueviolet;
+    height: 100vh;
+}
+
+.ofertas {
+    display: flex;
+    align-items: center;
+    width: 99vw;
+    height: 100vh;
+    background-color: var(--cor-primaria);
+}
+
+.cardapio {
+    width: 99vw;
+    height: 100vh;
+}
+
+.conteudo-home{
+    display: flex;
+    margin-top: 130px;
+    gap: 50px;
+}
+
+.texto-home{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 40vw;
+    height: 50vh;
+}
+
+.texto-home p {
+    font-size: 30px;
+}
+
+.texto-home h1 {
+    font-size: 50px;
+}
+
+.img-home{
+    background-color: aquamarine;
+    width: 45vw;
+    height: 60vh;
+}
+
+.carrosel{
+    margin-left: 140px;
+    width: 80vw;
+    height: 60vh;
+    background-color: burlywood;
+}
+
+.conteudo-cardapio{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    bottom: -150px;
+    gap: 40px;
+}
+
+.crdp-item1{
+    background-color: #464646;
+    width: 20vw;
+    height: 60vh;
+}
+
+.crdp-item2{
+    background-color: #464646;
+    width: 20vw;
+    height: 60vh;
+}
+
+.crdp-item3{
+    background-color: #464646;
+    width: 20vw;
+    height: 60vh;
+}
+
+.crdp-item4{
+    background-color: #464646;
+    width: 20vw;
+    height: 60vh;
+}
+
+.crdp-img1{
+    background-color: #c7e1e7;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 17vw;
+    height: 25vh;
+}
+
+@media screen and (max-width: 1170px) {
+
+    .conteudo-home{
+        flex-direction: column-reverse;
+    }
+
+    .img-home{
+        position:relative;
+        top: -60px;
+        margin: 0 auto;
+        width: 80vw;
+        height: 30vh;
+    }
+
+    .texto-home{
+        position:relative;
+        top: -50px;
+        display: flex;
+        width: 100%;
+        padding: 25px;
+    }
+
+    .ofertas{
+        height: 40vh;
+    }
+    
+    .carrosel {
+        width: 90vw;
+        height: 30vh;
+        margin-left: 20px;
+    }
+
+    .conteudo-cardapio{
+        flex-direction: column;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .crdp-item1{
+        width: 70vw;
+        height: 50vh;
+        margin-left: 60px;
+    }
+    
+    .crdp-item2{
+        width: 70vw;
+        height: 50vh;
+        margin-left: 60px;
+    }
+    
+    .crdp-item3{
+        width: 70vw;
+        height: 50vh;
+        margin-left: 60px;
+    }
+    
+    .crdp-item4{
+        width: 70svw;
+        height: 50vh;
+        margin-left: 60px;
+    }
+
+    .crdp-img1{
+        width: 60vw;
+        height: 20vh;
+    }
 }
