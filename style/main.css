@@ -15,23 +15,12 @@ body{
     background: #f1f2f3;
 }
 
+/* CSS DO PÁGINA PRINCIPAL (HOME) */
+
 .home {
     display: flex;
     justify-content: center;
     justify-content: center;
-    width: 99vw;
-    height: 100vh;
-}
-
-.ofertas {
-    display: flex;
-    align-items: center;
-    width: 99vw;
-    height: 100vh;
-    background-color: var(--cor-primaria);
-}
-
-.cardapio {
     width: 99vw;
     height: 100vh;
 }
@@ -62,13 +51,108 @@ body{
     background-color: aquamarine;
     width: 45vw;
     height: 60vh;
+    border-radius: 15px;
 }
 
-.carrosel{
-    margin-left: 140px;
+.button-cardapio{
+    margin-top: 20px;
+    width: 15vw;
+    height: 5vh;
+    border: none;
+    border-radius: 10px;
+    background-color: aquamarine;
+}
+
+.button-cardapio a{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+}
+
+/* CSS DO CARROSEL DE OFERTAS */
+
+.ofertas {
+    align-items: center;
+    width: 99vw;
+    height: 70vh;
+    background-color: var(--cor-primaria);
+}
+
+.slider{
     width: 80vw;
-    height: 60vh;
-    background-color: burlywood;
+    height: 65vh;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider .list{
+    position: absolute;
+    width: max-content;
+    height: 100%;
+    top: 40px;
+    display: flex;
+    transition: 1s;
+}
+
+.slider .list img{
+    width: 90vw;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider .buttons{
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider .buttons button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff5;
+    color: #fff;
+    border: none;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.slider .dots{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.slider .dots li{
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.slider .dots li.active{
+    width: 30px;
+}
+
+/* CSS DO CARDÁPIO */
+
+.cardapio {
+    width: 99vw;
+    height: 100vh;
 }
 
 .conteudo-cardapio{
@@ -83,32 +167,69 @@ body{
     background-color: #464646;
     width: 20vw;
     height: 60vh;
+    border-radius: 30px;
 }
 
 .crdp-item2{
     background-color: #464646;
     width: 20vw;
     height: 60vh;
+    border-radius: 30px;
 }
 
 .crdp-item3{
     background-color: #464646;
     width: 20vw;
     height: 60vh;
+    border-radius: 30px;
 }
 
 .crdp-item4{
     background-color: #464646;
     width: 20vw;
     height: 60vh;
+    border-radius: 30px;
 }
 
 .crdp-img1{
-    background-color: #c7e1e7;
-    margin: 0 auto;
+    border-radius: 5px;
+    position: relative;
+    left: 20px;
     margin-top: 20px;
     width: 17vw;
     height: 25vh;
+}
+
+.nome-drink{
+    text-align: center;
+    color: #fff;
+}
+
+.desc-drink{
+    text-align: center;
+    margin-top: 15px;
+    font-size: 15px;
+    color: #fff;
+}
+
+.preco-drink{
+    color: yellow;
+    font-size: 25px;
+    margin-top: 30px;
+    margin-left: 15px;
+}
+
+.button-comprar{
+    background-color: greenyellow;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    width: 140px;
+    height: 30px;
+    margin-left: 80px;
+    margin-top: 30px;
 }
 
 @media screen and (max-width: 1170px) {
@@ -134,13 +255,17 @@ body{
     }
 
     .ofertas{
-        height: 40vh;
+        height: 70vh;
     }
     
     .carrosel {
         width: 90vw;
         height: 30vh;
         margin-left: 20px;
+    }
+
+    .cardapio{
+        height: 200vh;
     }
 
     .conteudo-cardapio{
