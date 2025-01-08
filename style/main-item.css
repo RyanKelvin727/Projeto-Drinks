@@ -1,0 +1,160 @@
+body {
+    background-color: #fff;
+}
+
+.container {
+    display: flex;
+    width: 95vw;
+    height: 80vh;
+    border: 2px solid black;
+    margin: 0 auto;
+}
+
+.div-img {
+    width: 45vw;
+    height: 72vh;
+    border: 2px solid black;
+    border-radius: 2%;
+    margin-top: 27px;
+    margin-left: 27px;
+}
+
+.div-img img{
+    width: 45vw;
+    height: 72vh;
+}
+
+.div-texto {
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+    height: 72vh;
+    border: 2px solid black;
+    margin-top: 27px;
+    margin-left: 18px;
+}
+
+.titulo {
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.descricao {
+    width: 42vw;
+    font-size: 20px;
+    background-color: #f2efef;
+    border: 1px solid black;
+    border-radius: 5%;
+    margin: 0 auto;
+    padding: 10px;
+    padding-bottom: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.preco {
+    margin-top: 30px;
+    margin-bottom: 140px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.buttons .btn-add {
+    width: 20vw;
+    height: 40px;
+    margin-right: 50px;
+}
+
+.buttons .btn-comprar {
+    width: 20vw;
+    height: 40px;
+}
+
+@media screen and (max-width: 1170px) {
+
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .div-img {
+        height: auto;
+        width: 90vw;
+        margin: 0 auto;
+    }
+
+    .div-img img{
+        height: 50vh;
+        width: 90vw;
+    }
+
+    .div-texto {
+        width: 90vw;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .descricao {
+        width: 90vw;
+    }
+
+    .preco {
+        margin-bottom: 40px;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .buttons .btn-add {
+        width: 40vw;
+        height: 40px;
+        margin-right: 20px;
+    }
+
+    .buttons .btn-comprar {
+        width: 40vw;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .container {
+        height: auto;
+    }
+
+    .div-img {
+        height: auto;
+        margin: 10px auto;
+    }
+
+    .div-texto {
+        height: auto;
+        margin: 10px auto;
+    }
+
+    .titulo {
+        font-size: 18px;
+    }
+
+    .descricao {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .buttons .btn-add, .buttons .btn-comprar {
+        width: 40vw;
+        margin: 10px 0;
+    }
+
+    .buttons .btn-add{
+        margin-right: 20px;
+    }
+}
