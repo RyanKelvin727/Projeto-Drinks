@@ -16,7 +16,7 @@
                     <h1> EL <br>VERANO </h1>
                 </div>
                 <div class="mobile-menu-icon">
-                    <button onclick="menuAbrir()"><img class="icon" src=".assets/bars-solid.svg" alt=""></button>
+                    <button onclick="menuAbrir()"><img class="icon" src="/assets/bars-solid.svg" alt=""></button>
                 </div>
             </div>
            
@@ -29,8 +29,6 @@
             <div class="nav-list">
                 <ul>
                     <li class="nav-item"><a href="index.html" class="nav-link"> <i class="fa-solid fa-address-card"></i>Início </a></li>
-                    <li class="nav-item"><a href="#ofertas" class="nav-link"> <i class="fa-solid fa-tag"></i>Ofertas </a></li>
-                    <li class="nav-item"><a href="#cardapio" class="nav-link"> <i class="fa-solid fa-martini-glass-citrus"></i>Cardápio</a></li>
                 </ul>
             </div>
 
@@ -46,7 +44,7 @@
     <main>
         <div class="container">
             <div class="div-img">
-                <img src="/assets/1.jpg" alt="">
+                <img src="/assets/Drink-Morango.jpg" alt="">
             </div>
             <div class="div-texto">
                 <div class="titulo">
@@ -54,19 +52,43 @@
                 </div>
                 <hr>
                 <div class="descricao">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit voluptas quaerat culpa deleniti tempora soluta accusamus facilis deserunt ipsam vel.</p>
+                    <p>Delicioso e refrescante, este drink de morango combina o sabor doce e vibrante dos morangos frescos com um toque suave de licor, criando uma bebida leve e perfeita para qualquer ocasião. Servido gelado, é a escolha ideal para quem busca uma explosão de sabor frutado e refrescante em cada gole.</p>
                 </div>
                 <hr>
                 <div class="preco">
-                    <h1>R$ 27,00</h1>
+                    <span class="preco-original">R$ 27,00</span>
+                    <span class="preco-desconto">R$ 24,30</span>
                 </div>
+                
                 <div class="buttons">
-                    <button class="btn-add">Adicionar</button>
+                    <div class="quantidade-controls">
+                        <button id="tirar" class="btn-control">-</button>
+                        <input type="text" id="quantidade" value="1" readonly>
+                        <button id="botar" class="btn-control">+</button>
+                    </div>
                     <button class="btn-comprar">Comprar</button>
                 </div>
             </div>
         </div>
     </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p>Telefone: (11) 1234-5678</p>
+                <p>Email: contato@elverano.com.br</p>
+            </div>
+            <div class="footer-section">
+                <h3>Endereço</h3>
+                <p>Rua Exemplo, 123</p>
+                <p>Cidade - Estado</p>
+            </div>
+            <div class="footer-section">
+                <h3>Sobre a Empresa</h3>
+                <p>EL VERANO é uma empresa dedicada a oferecer os melhores produtos e serviços para nossos clientes. Com anos de experiência, buscamos sempre a qualidade e a satisfação do cliente.</p>
+            </div>
+        </div>
+    </footer>
     <script src="/style/script.js"></script>
 </body>
 </html>

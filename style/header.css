@@ -82,6 +82,7 @@ header {
 .nav-list {
     display: flex;
     align-items: center;
+    transition: opacity 0.3s ease;
 }
 
 .nav-list ul {
@@ -91,11 +92,48 @@ header {
 }
 
 .nav-item {
-    margin: 0 15px;
+    margin: 0 20px;
+    position: relative;
 }
 
-.nav-item i{
-    margin-right: 5px;
+.nav-item a {
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: var(--cor-terciaria);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efeito hover nos botões */
+.nav-item a:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Efeitos nos ícones */
+.nav-item i {
+    margin-right: 8px;
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-item a:hover i {
+    transform: scale(1.1);
+}
+
+/* Adicionando uma borda sutil nos botões */
+.nav-item a {
+    border: 1px solid transparent;
+}
+
+.nav-item a:hover {
+    border-color: var(--cor-secundaria);
 }
 
 .nav-link {
@@ -190,14 +228,25 @@ header {
         background-color: #f1f2f3;
     }
 
-    .mobile-menu .nav-item a:hover{
-        font-size: 20px;
+    .mobile-menu .nav-item a {
+        padding: 1rem;
+        border-radius: 20px;
+        font-size: 1.3rem;
+        transition: background-color 0.3s ease, font-size 0.2s ease, transform 0.3s ease;
     }
-
-    .nav-item i{
+    
+    .mobile-menu .nav-item a:hover {
+        background-color: var(--cor-secundaria);
+        color: var(--cor-primaria);
+        font-size: 1.4rem;
+        transform: translateX(5px);
+    }
+    
+    .mobile-menu .nav-item i {
         margin-right: 10px;
+        font-size: 1.5rem;
     }
-
+    
     .open {
         display: block;
     }

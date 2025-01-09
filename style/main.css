@@ -11,8 +11,11 @@
 
 /* Codes do main do site */
 
-body{
-    background: #f1f2f3;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
 }
 
 /* CSS DO PÁGINA PRINCIPAL (HOME) */
@@ -20,85 +23,192 @@ body{
 .home {
     display: flex;
     justify-content: center;
-    justify-content: center;
-    width: 99vw;
+    align-items: center;
     height: 100vh;
+    background: #f9f9f9;
+    color: black;
+    padding: 0 20px;
 }
 
-.conteudo-home{
+.conteudo-home {
     display: flex;
-    margin-top: 130px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
     gap: 50px;
 }
 
-.texto-home{
+.texto-home {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    width: 40vw;
-    height: 50vh;
-}
-
-.texto-home p {
-    font-size: 30px;
+    width: 45%;
+    text-align: left;
+    z-index: 1;
 }
 
 .texto-home h1 {
-    font-size: 50px;
-}
-
-.img-home{
-    background-color: aquamarine;
-    width: 45vw;
-    height: 60vh;
-    border-radius: 15px;
-}
-
-.button-cardapio{
-    margin-top: 20px;
-    width: 15vw;
-    height: 5vh;
-    border: none;
-    border-radius: 10px;
-    background-color: aquamarine;
-}
-
-.button-cardapio a{
-    text-decoration: none;
+    font-size: 60px;
     font-weight: bold;
-    color: black;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4); /* Sombra para destacar o título */
+}
+
+.texto-home p {
     font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.button-cardapio {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #0187a7;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.button-cardapio a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.button-cardapio:hover {
+    background-color: #036077;
+}
+
+/* Imagem de destaque */
+.img-home {
+    position: relative;
+    width: 45%;
+    height: 70vh;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.img-home img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.img-home:hover {
+    transform: scale(1.05); /* Efeito de zoom na imagem */
+}
+
+/* CSS DOS BENEFICIOS */
+
+/* Estilo para a seção de benefícios */
+.beneficios {
+    background-color: #f1f2f3;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.beneficios h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #0187a7;
+    margin-bottom: 30px;
+}
+
+.beneficios-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.beneficio {
+    background-color: #0187a7;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 80px; /* Altura mínima ajustada */
+}
+
+.beneficio:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.beneficio h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.beneficio p {
+    font-size: 14px;
+    margin-top: 1px;
 }
 
 /* CSS DO CARROSEL DE OFERTAS */
 
-.ofertas {
-    align-items: center;
-    width: 99vw;
-    height: 70vh;
-    background-color: var(--cor-primaria);
+.ofertas-intro {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.slider{
+.ofertas-intro h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.ofertas {
+    width: 100vw;
+    height: 70vh;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.slider {
     width: 80vw;
-    height: 65vh;
-    margin: auto;
+    height: 60vh;
     position: relative;
     overflow: hidden;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .slider .list{
     position: absolute;
     width: max-content;
     height: 100%;
-    top: 40px;
     display: flex;
     transition: 1s;
 }
 
 .slider .list img{
     width: 90vw;
-    height: 100%;
+    height: 60vh;
     object-fit: cover;
 }
 
@@ -150,110 +260,202 @@ body{
 
 /* CSS DO CARDÁPIO */
 
-.cardapio {
-    width: 99vw;
-    height: 100vh;
+.cardapio-intro {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.conteudo-cardapio{
-    position: relative;
+.cardapio-intro h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.cardapio {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    width: 100%;
     display: flex;
     justify-content: center;
-    bottom: -150px;
+}
+
+.conteudo-cardapio {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.crdp-item1,
+.crdp-item2,
+.crdp-item3,
+.crdp-item4,
+.crdp-item5,
+.crdp-item6,
+.crdp-item7,
+.crdp-item8 {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.crdp-item1:hover,
+.crdp-item2:hover,
+.crdp-item3:hover,
+.crdp-item4:hover,
+.crdp-item5:hover,
+.crdp-item6:hover,
+.crdp-item7:hover,
+.crdp-item8:hover {
+    transform: scale(1.05);
+}
+
+.crdp-img1 {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 5px solid #0187a7;
+}
+
+.nome-drink {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 20px;
+    padding: 0 15px;
+}
+
+.desc-drink {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+    padding: 0 15px;
+}
+
+.preco-drink {
+    text-align: center;
+    color: #0187a7;
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+.button-comprar {
+    background-color: #0187a7;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    width: 160px;
+    height: 40px;
+    margin: 20px auto 30px auto;
+    display: block;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-comprar:hover {
+    background-color: #016f87;
+}
+
+/* CSS para itens escondidos */
+.conteudo-cardapio .escondido {
+    display: none;
+}
+
+/* Estilo para o botão "Ver mais" */
+.ver-mais-btn {
+    display: block;
+    width: 180px;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #0187a7;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ver-mais-btn:hover {
+    background-color: #036077;
+}
+
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: left;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
     gap: 40px;
 }
 
-.crdp-item1{
-    background-color: #464646;
-    width: 20vw;
-    height: 60vh;
-    border-radius: 30px;
+.footer-section {
+    width: 30%;
 }
 
-.crdp-item2{
-    background-color: #464646;
-    width: 20vw;
-    height: 60vh;
-    border-radius: 30px;
-}
-
-.crdp-item3{
-    background-color: #464646;
-    width: 20vw;
-    height: 60vh;
-    border-radius: 30px;
-}
-
-.crdp-item4{
-    background-color: #464646;
-    width: 20vw;
-    height: 60vh;
-    border-radius: 30px;
-}
-
-.crdp-img1{
-    border-radius: 5px;
-    position: relative;
-    left: 20px;
-    margin-top: 20px;
-    width: 17vw;
-    height: 25vh;
-}
-
-.nome-drink{
-    text-align: center;
-    color: #fff;
-}
-
-.desc-drink{
-    text-align: center;
-    margin-top: 15px;
-    font-size: 15px;
-    color: #fff;
-}
-
-.preco-drink{
-    color: yellow;
-    font-size: 25px;
-    margin-top: 30px;
-    margin-left: 15px;
-}
-
-.button-comprar{
-    background-color: greenyellow;
-    color: #fff;
+.footer-section h3 {
     font-size: 20px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    width: 140px;
-    height: 30px;
-    margin-left: 80px;
-    margin-top: 30px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.footer-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #bbb;
 }
 
 @media screen and (max-width: 1170px) {
 
-    .conteudo-home{
+    .conteudo-home {
         flex-direction: column-reverse;
+        text-align: center;
     }
 
-    .img-home{
-        position:relative;
-        top: -60px;
-        margin: 0 auto;
-        width: 80vw;
-        height: 30vh;
-    }
-
-    .texto-home{
-        position:relative;
-        top: -50px;
-        display: flex;
+    .texto-home {
         width: 100%;
-        padding: 25px;
+        margin-bottom: 30px;
     }
 
+    .texto-home h1 {
+        font-size: 45px;
+    }
+
+    .texto-home p {
+        font-size: 18px;
+    }
+
+    .img-home {
+        width: 80%;
+        height: 50vh;
+    }
+
+    .button-cardapio {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+    
     .ofertas{
         height: 70vh;
     }
@@ -264,42 +466,38 @@ body{
         margin-left: 20px;
     }
 
-    .cardapio{
-        height: 200vh;
+    .conteudo-cardapio {
+        grid-template-columns: 1fr; /* Um item por linha em dispositivos menores */
     }
 
-    .conteudo-cardapio{
+    .crdp-img1 {
+        height: 200px;
+    }
+
+    .nome-drink {
+        font-size: 20px;
+    }
+
+    .desc-drink {
+        font-size: 14px;
+    }
+
+    .preco-drink {
+        font-size: 20px;
+    }
+
+    .button-comprar {
+        width: 140px;
+        font-size: 16px;
+    }
+
+    .footer-container {
         flex-direction: column;
-        margin: 0 auto;
+        text-align: center;
+    }
+
+    .footer-section {
         width: 100%;
-    }
-
-    .crdp-item1{
-        width: 70vw;
-        height: 50vh;
-        margin-left: 60px;
-    }
-    
-    .crdp-item2{
-        width: 70vw;
-        height: 50vh;
-        margin-left: 60px;
-    }
-    
-    .crdp-item3{
-        width: 70vw;
-        height: 50vh;
-        margin-left: 60px;
-    }
-    
-    .crdp-item4{
-        width: 70svw;
-        height: 50vh;
-        margin-left: 60px;
-    }
-
-    .crdp-img1{
-        width: 60vw;
-        height: 20vh;
+        margin-bottom: 20px;
     }
 }

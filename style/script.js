@@ -1,3 +1,33 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const quantidadeInput = document.getElementById('quantidade');
+    const botarButton = document.getElementById('botar');
+    const tirarButton = document.getElementById('tirar');
+
+    botarButton.addEventListener('click', () => {
+        let currentValue = parseInt(quantidadeInput.value);
+        quantidadeInput.value = currentValue + 1;
+    });
+
+    tirarButton.addEventListener('click', () => {
+        let currentValue = parseInt(quantidadeInput.value);
+        if (currentValue > 1) {
+                quantidadeInput.value = currentValue - 1;
+        }
+    });
+});
+
+document.getElementById("ver-mais").addEventListener("click", function() {
+    // Torna os itens ocultos visíveis
+    var itensEscondidos = document.querySelector(".conteudo-cardapio .escondido");
+    if (itensEscondidos) {
+        itensEscondidos.classList.remove("escondido"); // Remove a classe 'escondido' para tornar os itens visíveis
+    }
+
+    // Esconde o botão "Ver mais" após o clique
+    this.style.display = "none";
+});
+
+
 let slider = document.querySelector('.slider .list');
 let items = document.querySelectorAll('.slider .list .item');
 let next = document.getElementById('next');
@@ -47,9 +77,13 @@ function menuAbrir() {
     let menuMobile = document.querySelector('.mobile-menu');
     if (menuMobile.classList.contains('open')) {
         menuMobile.classList.remove('open');
-        document.querySelector('.icon').src = "assets/bars-solid.svg";
+        document.querySelector('.icon').src = "/assets/bars-solid.svg";
     } else {
         menuMobile.classList.add('open');
-        document.querySelector('.icon').src = "assets/x-solid.svg";
+        document.querySelector('.icon').src = "/assets/x-solid.svg";
     }
 }
+
+
+
+
