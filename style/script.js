@@ -27,6 +27,28 @@ document.getElementById("ver-mais").addEventListener("click", function() {
     this.style.display = "none";
 });
 
+// Seleciona os blocos de conteúdo (divs) e os links de navegação
+const contentBlocks = document.querySelectorAll("div[id]"); // Usa divs com IDs
+const navLinks = document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+     contentBlocks.forEach((block) => {
+        const blockTop = block.offsetTop;
+        const blockHeight = block.offsetHeight;
+        if (pageYOffset >= blockTop - blockHeight / 3) {
+            current = block.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+        }
+    });
+});
 
 let slider = document.querySelector('.slider .list');
 let items = document.querySelectorAll('.slider .list .item');

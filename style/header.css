@@ -116,6 +116,15 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.nav-item a.active {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    font-weight: bold;
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
 /* Efeitos nos ícones */
 .nav-item i {
     margin-right: 8px;
