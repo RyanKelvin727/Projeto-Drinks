@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style/header.css">
+    <link rel="stylesheet" href="/style/header-item.css">
     <link rel="stylesheet" href="/style/main-item.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Página do Item</title>
@@ -11,35 +11,15 @@
 <body>
     <header>
         <nav class="nav-bar">
-            <div class="teste">
-                <div class="logo">
-                    <h1> EL <br>VERANO </h1>
-                </div>
-                <div class="mobile-menu-icon">
-                    <button onclick="menuAbrir()"><img class="icon" src="/assets/bars-solid.svg" alt=""></button>
-                </div>
+            <div class="nav-left">
+                <button class="back-button" onclick="window.location.href='index.html';">
+                    <i class="fa-solid fa-arrow-left"></i> Voltar
+                </button>
             </div>
-           
-            <div class="conteudo-barra-pesquisa">
-                <div class="caixa-pesquisa">
-                    <input type="text" class="barra-pesquisa" placeholder="O que você está procurando?">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
+            <div class="logo">
+                <h1>EL <br>VERANO</h1>
             </div>
-            <div class="nav-list">
-                <ul>
-                    <li class="nav-item"><a href="index.html" class="nav-link"> <i class="fa-solid fa-address-card"></i>Início </a></li>
-                </ul>
-            </div>
-
         </nav>
-        <div class="mobile-menu">
-            <ul>
-                <li class="nav-item"><a href="index.html" class="nav-link"><i class="fa-solid fa-address-card"></i>Nossa Marca</a></li>
-                <li class="nav-item"><a href="#ofertas" class="nav-link"><i class="fa-solid fa-tag"></i>Ofertas</a></li>
-                <li class="nav-item"><a href="#cardapio" class="nav-link"><i class="fa-solid fa-martini-glass-citrus"></i>Cardápio</a></li>
-            </ul>
-        </div>
     </header>
     <main>
         <div class="container">

@@ -1,3 +1,5 @@
+// Script do botão para adicionar mais produtos (Cardapio)
+
 document.addEventListener('DOMContentLoaded', () => {
     const quantidadeInput = document.getElementById('quantidade');
     const botarButton = document.getElementById('botar');
@@ -16,19 +18,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Script do botão "Ver mais" (Cardápio)
+
 document.getElementById("ver-mais").addEventListener("click", function() {
-    // Torna os itens ocultos visíveis
     var itensEscondidos = document.querySelector(".conteudo-cardapio .escondido");
     if (itensEscondidos) {
-        itensEscondidos.classList.remove("escondido"); // Remove a classe 'escondido' para tornar os itens visíveis
+        itensEscondidos.classList.remove("escondido");
     }
 
-    // Esconde o botão "Ver mais" após o clique
     this.style.display = "none";
 });
 
-// Seleciona os blocos de conteúdo (divs) e os links de navegação
-const contentBlocks = document.querySelectorAll("div[id]"); // Usa divs com IDs
+// Script para mostrar na nav-bar onde o usuário está
+
+const contentBlocks = document.querySelectorAll("div[id]");
 const navLinks = document.querySelectorAll(".nav-link");
 
 window.addEventListener("scroll", () => {
@@ -49,6 +52,24 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+
+// Script do menu para celulares
+
+const menuToggle = document.querySelector('.menu-toggle');
+const navList = document.querySelector('.nav-list');
+const navLink = document.querySelectorAll('.nav-item a');
+
+menuToggle.addEventListener('click', () => {
+    navList.classList.toggle('open');
+});
+
+navLink.forEach(link => {
+    link.addEventListener('click', () => {
+        navList.classList.remove('open');
+    });
+});
+
+// Script do carrossel de ofertas
 
 let slider = document.querySelector('.slider .list');
 let items = document.querySelectorAll('.slider .list .item');
@@ -92,20 +113,3 @@ dots.forEach((li, key) => {
 window.onresize = function(event) {
     reloadSlider();
 };
-
-// SCRIPT PARA ABRIR MENU MOBILE
-
-function menuAbrir() {
-    let menuMobile = document.querySelector('.mobile-menu');
-    if (menuMobile.classList.contains('open')) {
-        menuMobile.classList.remove('open');
-        document.querySelector('.icon').src = "/assets/bars-solid.svg";
-    } else {
-        menuMobile.classList.add('open');
-        document.querySelector('.icon').src = "/assets/x-solid.svg";
-    }
-}
-
-
-
-

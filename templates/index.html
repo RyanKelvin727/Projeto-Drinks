@@ -8,44 +8,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>EL VERANO</title>
 </head>
-<body>
-    
+<body> 
     <!-- Criando o cabeçalho do site -->
-
     <header>
         <nav class="nav-bar">
-            <div class="teste">
-                <div class="logo">
-                    <h1> EL <br>VERANO </h1>
-                </div>
-                <div class="mobile-menu-icon">
-                    <button onclick="menuAbrir()"><img class="icon" src=".assets/bars-solid.svg" alt=""></button>
-                </div>
+            <div class="logo">
+                <h1>EL <br>VERANO</h1>
             </div>
-           
-            <div class="conteudo-barra-pesquisa">
-                <div class="caixa-pesquisa">
-                    <input type="text" class="barra-pesquisa" placeholder="O que você está procurando?">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-            </div>
+            <button class="menu-toggle" aria-label="Abrir menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
             <div class="nav-list">
                 <ul>
-                    <li class="nav-item"><a href="#home" class="nav-link"> <i class="fa-solid fa-address-card"></i>Nossa Marca </a></li>
-                    <li class="nav-item"><a href="#ofertas" class="nav-link"> <i class="fa-solid fa-tag"></i>Ofertas </a></li>
-                    <li class="nav-item"><a href="#cardapio" class="nav-link"> <i class="fa-solid fa-martini-glass-citrus"></i>Cardápio</a></li>
+                    <li class="nav-item"><a href="#home" class="nav-link"> <i class="fa-solid fa-address-card"></i> Nossa Marca </a></li>
+                    <li class="nav-item"><a href="#ofertas" class="nav-link"> <i class="fa-solid fa-tag"></i> Ofertas </a></li>
+                    <li class="nav-item"><a href="#cardapio" class="nav-link"> <i class="fa-solid fa-martini-glass-citrus"></i> Cardápio </a></li>
                 </ul>
             </div>
-
         </nav>
-        <div class="mobile-menu">
-            <ul>
-                <li class="nav-item"><a href="#home" class="nav-link"><i class="fa-solid fa-address-card"></i>Nossa Marca</a></li>
-                <li class="nav-item"><a href="#ofertas" class="nav-link"><i class="fa-solid fa-tag"></i>Ofertas</a></li>
-                <li class="nav-item"><a href="#cardapio" class="nav-link"><i class="fa-solid fa-martini-glass-citrus"></i>Cardápio</a></li>
-            </ul>
-        </div>
     </header>
+    
     <main>
         <!-- Codigo do HOME -->
         <div id="home" class="home">
@@ -82,7 +64,7 @@
                     <h3>Descontos Exclusivos</h3>
                     <p>Aproveite promoções especiais.</p>
                 </div>
-                <div class="beneficio">
+                <div class="beneficio1">
                     <h3>Compra Segura</h3>
                     <p>Garantimos a segurança.</p>
                 </div>
@@ -219,7 +201,6 @@
         </div>
     </main>
     <script src="/style/script.js"></script>
-
     <footer>
         <div class="footer-container">
             <div class="footer-section">

@@ -28,11 +28,12 @@ header {
 }
 
 .nav-bar {
-    width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 1.5rem 6rem;
     font-family: var(--fonte-principal);
+    position: relative;
 }
 
 .logo {
@@ -44,56 +45,16 @@ header {
     color: var(--cor-terciaria);
 }
 
-.conteudo-barra-pesquisa{
-    width: 30%;
-    display: flex;
-    align-items: center;
-}
-
-.caixa-pesquisa {
-    background-color: #f1f2f3;
-    border: solid 1px var(--cor-terciaria);
-    height: 70%;
-    width: 100%;
-    border-radius: 40px;
-    display: flex;
-    align-items: center;
-
-}
-
-.barra-pesquisa {
-    outline: none;
-    border: none;
-    background: none;
-    width: 100%;
-    padding: 0;
-    padding-left: 10px;
-    color: var(--cor-body);
-    font-size: 20px;
-    line-height: 30px;
-}
-
-.caixa-pesquisa i{
-    padding-right: 30px;
-    font-size: 20px;
-    color: var(--cor-terciaria);
-}
-
 .nav-list {
     display: flex;
     align-items: center;
-    transition: opacity 0.3s ease;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
 }
 
 .nav-list ul {
     display: flex;
-    justify-content: center;
     list-style: none;
-}
-
-.nav-item {
-    margin: 0 20px;
-    position: relative;
+    gap: 20px;
 }
 
 .nav-item a {
@@ -101,11 +62,53 @@ header {
     font-size: 1.15rem;
     color: var(--cor-terciaria);
     font-weight: 400;
-    display: flex;
-    align-items: center;
-    padding: 10px 15px;
-    border-radius: 25px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 12px 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    display: block;
+}
+
+/* Efeito hover nos botões */
+.nav-item a:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Efeitos nos ícones */
+.nav-item i {
+    margin-right: 10px;
+    font-size: 1.4rem;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito no ícone ao passar o mouse */
+.nav-item a:hover i {
+    transform: scale(1.15);
+}
+
+/* Adicionando borda sutil nos itens */
+.nav-item a {
+    border: 1px solid transparent;
+}
+
+/* Adicionando borda no hover */
+.nav-item a:hover {
+    border-color: var(--cor-secundaria);
+}
+
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--cor-terciaria);
+    position: relative;
+    right: -60px;
 }
 
 /* Efeito hover nos botões */
@@ -152,112 +155,64 @@ header {
     font-weight: 400;
 }
 
-/* Estilizando menu mobile */
-
-.icon{
-    width: 30px;
-    height: 30px;
-}
-
-.mobile-menu-icon {
-    display: none;
-}
-
-.mobile-menu {
-    display: none;
-}
-
-/* Codes de responsividade */
+/* Estilizando o site para celulares */
 
 @media screen and (max-width: 1170px) {
 
     .logo h1{
         font-size: 20px;
+        position: relative;
+        left: -60px;
     }
 
-    .conteudo-barra-pesquisa{
-        margin: 0 auto;
-        width: 90%;
+    .menu-toggle {
+        display: block; /* Exibe o botão do menu */
     }
 
-    .caixa-pesquisa{
-        height: 45px;
+    .nav-list {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: var(--cor-primaria);
+        width: 50%; /* A largura do menu será metade da tela */
+        position: absolute;
+        top: 100%;
+        right: 0; /* Alinha o menu à direita */
+        padding: 0 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        transition: all 0.3s ease; /* Suaviza o efeito de abertura */
+    }
+
+    .nav-list.open {
+        max-height: 400px;
+        opacity: 1;
+    }
+
+    .nav-list ul {
+        flex-direction: column;
+        gap: 15px; /* Aumenta o espaçamento entre os itens */
         width: 100%;
     }
 
-    .nav-bar {
-        padding: 1.5rem 1rem;
-        flex-direction: column;
-        gap: 10px;
+    .nav-item a {
+        width: 100%;
+        padding: 15px 0; /* Mais padding para dar mais espaço aos itens */
+        border-radius: 8px;
+        transition: background-color 0.2s ease;
+        text-align: center; /* Centraliza o texto no botão */
     }
 
-    .nav-item {
-        display: none;
-        font-family: var(--fonte-principal);
+    .nav-item a:hover {
+        background-color: var(--cor-secundaria);
+        color: var(--cor-primaria);
     }
 
     .teste{
         display: flex;
         gap: 70%;
     }
-
-    .mobile-menu-icon {
-        position: relative;
-        display: block;
-    }
-
-    .mobile-menu-icon button {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-    }
-
-    .mobile-menu{
-        position: absolute;
-        right: 0;
-        width: 50vw;
-        height: 36vh;
-        background: var(--cor-primaria);
-    }
-
-    .mobile-menu ul {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        padding-bottom: 1rem;
-    }
-
-    .mobile-menu .nav-item {
-        display: flex;
-        justify-content: center;
-        padding: 2rem 0rem 2rem 0rem;
-    }
-
-    .mobile-menu .nav-item:hover{
-        background-color: #f1f2f3;
-    }
-
-    .mobile-menu .nav-item a {
-        padding: 1rem;
-        border-radius: 20px;
-        font-size: 1.3rem;
-        transition: background-color 0.3s ease, font-size 0.2s ease, transform 0.3s ease;
-    }
-    
-    .mobile-menu .nav-item a:hover {
-        background-color: var(--cor-secundaria);
-        color: var(--cor-primaria);
-        font-size: 1.4rem;
-        transform: translateX(5px);
-    }
-    
-    .mobile-menu .nav-item i {
-        margin-right: 10px;
-        font-size: 1.5rem;
-    }
-    
-    .open {
-        display: block;
-    }
-
 }
+

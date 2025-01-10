@@ -18,7 +18,7 @@ body {
     background-color: #fff;
 }
 
-/* CSS DO PÁGINA PRINCIPAL (HOME) */
+/* Estilizando a aba "Nossa Marca" do site */
 
 .home {
     display: flex;
@@ -52,7 +52,7 @@ body {
     font-weight: bold;
     line-height: 1.2;
     margin-bottom: 20px;
-    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4); /* Sombra para destacar o título */
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
 }
 
 .texto-home p {
@@ -83,7 +83,8 @@ body {
     background-color: #036077;
 }
 
-/* Imagem de destaque */
+/* Imagem em destaque no home */
+
 .img-home {
     position: relative;
     width: 45%;
@@ -103,12 +104,11 @@ body {
 }
 
 .img-home:hover {
-    transform: scale(1.05); /* Efeito de zoom na imagem */
+    transform: scale(1.05);
 }
 
-/* CSS DOS BENEFICIOS */
+/* Estilizando a parte dos benefícios */
 
-/* Estilo para a seção de benefícios */
 .beneficios {
     background-color: #f1f2f3;
     padding: 50px 0;
@@ -158,7 +158,34 @@ body {
     margin-top: 1px;
 }
 
-/* CSS DO CARROSEL DE OFERTAS */
+.beneficio1 {
+    background-color: #0187a7;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 80px; /* Altura mínima ajustada */
+}
+
+.beneficio1:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.beneficio1 h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.beneficio1 p {
+    font-size: 14px;
+    margin-top: 1px;
+}
+
+/* Estilizando o carrosel de ofertas */
 
 .ofertas-intro {
     text-align: center;
@@ -258,7 +285,7 @@ body {
     width: 30px;
 }
 
-/* CSS DO CARDÁPIO */
+/* Estilizando o cardápio */
 
 .cardapio-intro {
     text-align: center;
@@ -371,12 +398,14 @@ body {
     background-color: #016f87;
 }
 
-/* CSS para itens escondidos */
+/* Codigo para deixar alguns produtos escondidos */
+
 .conteudo-cardapio .escondido {
     display: none;
 }
 
-/* Estilo para o botão "Ver mais" */
+/* Estilizando o botão "Ver Mais" */
+
 .ver-mais-btn {
     display: block;
     width: 180px;
@@ -394,6 +423,8 @@ body {
 .ver-mais-btn:hover {
     background-color: #036077;
 }
+
+/* Estilizando o rodapé do site */
 
 footer {
     background-color: #222;
@@ -426,6 +457,8 @@ footer {
     color: #bbb;
 }
 
+/* Estilizando o site para celular */
+
 @media screen and (max-width: 1170px) {
 
     .conteudo-home {
@@ -449,6 +482,10 @@ footer {
     .img-home {
         width: 80%;
         height: 50vh;
+    }
+
+    .beneficio1{
+        display: none;
     }
 
     .button-cardapio {

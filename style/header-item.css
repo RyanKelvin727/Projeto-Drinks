@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+
+:root {
+    --cor-primaria: #fff;
+    --cor-secundaria: #0187a7;
+    --cor-terciaria: #000000;
+    --cor-body: #424244;
+    --cor-boxshadow-rodape: #464646;
+    --cor-hover: #c7e1e7;
+
+    --fonte-principal: 'Inter', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Alterações de CSS para mover a logo para o lado direito e adicionar o ícone de voltar */
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: var(--cor-primaria);
+    z-index: 3;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 6rem;
+    font-family: var(--fonte-principal);
+    position: relative;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--cor-terciaria);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+    position: relative;
+    left: -60px;
+}
+
+.back-button i {
+    font-size: 1.5rem;
+}
+
+.back-button:hover {
+    color: var(--cor-secundaria);
+}
+
+.logo {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    right: 10%; /* Ajusta a logo para o lado direito */
+}
+
+.logo h1 {
+    color: var(--cor-terciaria);
+}
+
+/* Nav-list */
+.nav-list {
+    display: flex;
+    align-items: center;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-list ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: var(--cor-terciaria);
+    font-weight: 400;
+    padding: 12px 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    display: block;
+}
+
+/* Efeito hover nos botões */
+.nav-item a:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
