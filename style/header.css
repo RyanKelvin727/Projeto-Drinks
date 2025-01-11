@@ -1,14 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+/* Importação de fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400&display=swap');
 
 :root {
     --cor-primaria: #fff;
-    --cor-secundaria: #0187a7;
+    --cor-secundaria: #f9f9f9;
     --cor-terciaria: #000000;
-    --cor-body: #424244;
-    --cor-boxshadow-rodape: #464646;
-    --cor-hover: #c7e1e7;
+    --cor-quartenaria: #ff7f50;
+    --cor-buttons: linear-gradient(135deg, #ff7f50, #ff6347);
+    --cor-buttons-houver: linear-gradient(135deg, #d2663e, #ef4629);
 
-    --fonte-principal: 'Inter', sans-serif;
+    --fonte-principal: 'Roboto', sans-serif;
+    --fonte-secundaria: 'Poppins', sans-serif;
 }
 
 * {
@@ -32,7 +35,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 6rem;
-    font-family: var(--fonte-principal);
+    font-family: var(--fonte-secundaria);
     position: relative;
 }
 
@@ -42,6 +45,8 @@ header {
 }
 
 .logo h1 {
+    position: absolute;
+    font-size: 28px;
     color: var(--cor-terciaria);
 }
 
@@ -113,14 +118,14 @@ header {
 
 /* Efeito hover nos botões */
 .nav-item a:hover {
-    background-color: var(--cor-secundaria);
+    background: var(--cor-buttons-houver);
     color: var(--cor-primaria);
     transform: translateY(-4px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .nav-item a.active {
-    background-color: var(--cor-secundaria);
+    background: var(--cor-buttons-houver);
     color: var(--cor-primaria);
     font-weight: bold;
     transform: translateY(-4px);
@@ -145,7 +150,7 @@ header {
 }
 
 .nav-item a:hover {
-    border-color: var(--cor-secundaria);
+    border-color: var(--cor-quartenaria);
 }
 
 .nav-link {
@@ -166,7 +171,7 @@ header {
     }
 
     .menu-toggle {
-        display: block; /* Exibe o botão do menu */
+        display: block;
     }
 
     .nav-list {
@@ -176,14 +181,14 @@ header {
         flex-direction: column;
         align-items: flex-start;
         background-color: var(--cor-primaria);
-        width: 50%; /* A largura do menu será metade da tela */
+        width: 50%;
         position: absolute;
         top: 100%;
-        right: 0; /* Alinha o menu à direita */
+        right: 0; 
         padding: 0 1rem;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
-        transition: all 0.3s ease; /* Suaviza o efeito de abertura */
+        transition: all 0.3s ease;
     }
 
     .nav-list.open {
@@ -193,20 +198,20 @@ header {
 
     .nav-list ul {
         flex-direction: column;
-        gap: 15px; /* Aumenta o espaçamento entre os itens */
+        gap: 15px;
         width: 100%;
     }
 
     .nav-item a {
         width: 100%;
-        padding: 15px 0; /* Mais padding para dar mais espaço aos itens */
+        padding: 15px 0;
         border-radius: 8px;
         transition: background-color 0.2s ease;
-        text-align: center; /* Centraliza o texto no botão */
+        text-align: center;
     }
 
     .nav-item a:hover {
-        background-color: var(--cor-secundaria);
+        background: var(--cor-buttons-houver);
         color: var(--cor-primaria);
     }
 

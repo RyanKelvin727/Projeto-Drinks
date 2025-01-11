@@ -1,21 +1,44 @@
+/* Importação de fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400&display=swap');
+
 :root {
     --cor-primaria: #fff;
-    --cor-secundaria: #0187a7;
-    --cor-terciaria: #000000;
-    --cor-body: #424244;
-    --cor-boxshadow-rodape: #464646;
-    --cor-hover: #c7e1e7;
+    --cor-secundaria: #f9f9f9;
+    --cor-terciaria: #44434a;
+    --cor-quartenaria: #ff7f50;
+    --cor-buttons: linear-gradient(135deg, #ff7f50, #ff6347);
+    --cor-buttons-houver: linear-gradient(135deg, #d2663e, #ef4629);
 
-    --fonte-principal: 'Inter', sans-serif;
+    --fonte-principal: 'Roboto', sans-serif;
+    --fonte-secundaria: 'Poppins', sans-serif;
 }
 
 /* Codes do main do site */
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--fonte-principal);
     margin: 0;
     padding: 0;
-    background-color: #fff;
+    background-color: var(--cor-primaria);
+}
+
+/* Efeito de fade in */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Quando o elemento estiver visível */
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Outros ajustes para os elementos */
+.texto-home h1, .texto-home p, .button-cardapio, .img-home {
+    transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 /* Estilizando a aba "Nossa Marca" do site */
@@ -25,8 +48,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #f9f9f9;
-    color: black;
+    background: var(--cor-secundaria);
+    color: var(--cor-terciaria);
     padding: 0 20px;
 }
 
@@ -48,6 +71,7 @@ body {
 }
 
 .texto-home h1 {
+    font-family: var(--fonte-secundaria);
     font-size: 60px;
     font-weight: bold;
     line-height: 1.2;
@@ -62,25 +86,28 @@ body {
 }
 
 .button-cardapio {
-    padding: 15px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    background-color: #0187a7;
-    color: #fff;
+    font-family: var(--fonte-secundaria);
+    background: var(--cor-buttons);
+    color: var(--cor-primaria);
     border: none;
-    border-radius: 50px;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 16px;
     cursor: pointer;
-    text-align: center;
-    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .button-cardapio a {
     text-decoration: none;
-    color: #fff;
+    color: var(--cor-primaria);
 }
 
 .button-cardapio:hover {
-    background-color: #036077;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    background: var(--cor-buttons-houver);
 }
 
 /* Imagem em destaque no home */
@@ -89,7 +116,7 @@ body {
     position: relative;
     width: 45%;
     height: 70vh;
-    background-color: #fff;
+    background-color: var(--cor-primaria);
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -118,7 +145,7 @@ body {
 .beneficios h2 {
     font-size: 36px;
     font-weight: bold;
-    color: #0187a7;
+    color: #44434a;
     margin-bottom: 30px;
 }
 
@@ -131,66 +158,50 @@ body {
     padding: 0 20px;
 }
 
-.beneficio {
-    background-color: #0187a7;
-    color: #fff;
+.beneficio, .beneficio1 {
+    background: #dbbe92;
+    color: #9b613c;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     padding: 10px;
-    text-align: center;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 80px; /* Altura mínima ajustada */
+    min-height: 60px;
+    max-height: 60px;
 }
 
-.beneficio:hover {
+.beneficio:hover, .beneficio1:hover {
     transform: scale(1.05);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
-.beneficio h3 {
-    font-size: 14px;
+.beneficio h3, .beneficio1 h3 {
+    font-family: var(--fonte-secundaria);
+    font-size: 11px;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 1px;
 }
 
-.beneficio p {
-    font-size: 14px;
+.beneficio p, .beneficio1 p {
+    font-size: 10px;
     margin-top: 1px;
 }
 
-.beneficio1 {
-    background-color: #0187a7;
-    color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 80px; /* Altura mínima ajustada */
-}
-
-.beneficio1:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-}
-
-.beneficio1 h3 {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.beneficio1 p {
-    font-size: 14px;
-    margin-top: 1px;
+.beneficio i, .beneficio1 i {
+    font-size: 20px;
+    color: #9b613c;
 }
 
 /* Estilizando o carrosel de ofertas */
 
 .ofertas-intro {
+    font-family: var(--fonte-secundaria);
     text-align: center;
     margin-top: 50px;
-    padding: 20px;
+    padding: 5px;
     background-color: #f1f1f1;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -199,7 +210,7 @@ body {
 .ofertas-intro h2 {
     font-size: 2rem;
     font-weight: bold;
-    color: #333;
+    color: #44434a;
     margin: 0;
     padding: 10px;
     text-transform: uppercase;
@@ -220,7 +231,7 @@ body {
     height: 60vh;
     position: relative;
     overflow: hidden;
-    background-color: #fff;
+    background-color: var(--cor-primaria);
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
@@ -249,21 +260,30 @@ body {
 }
 
 .slider .buttons button{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background-color: #fff5;
-    color: #fff;
+    background-color: #ffffff8e;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: var(--cor-primaria);
     border: none;
     font-family: monospace;
     font-weight: bold;
+}
+
+.slider .buttons button:hover {
+    background-color: var(--cor-primaria);
+}
+
+.slider .buttons i{
+    color: var(--cor-terciaria);
 }
 
 .slider .dots{
     position: absolute;
     bottom: 10px;
     left: 0;
-    color: #fff;
+    color: var(--cor-primaria);
     width: 100%;
     margin: 0;
     padding: 0;
@@ -275,7 +295,7 @@ body {
     list-style: none;
     width: 10px;
     height: 10px;
-    background-color: #fff;
+    background-color: var(--cor-primaria);
     margin: 10px;
     border-radius: 20px;
     transition: 0.5s;
@@ -288,9 +308,10 @@ body {
 /* Estilizando o cardápio */
 
 .cardapio-intro {
+    font-family: var(--fonte-secundaria);
     text-align: center;
     margin-top: 50px;
-    padding: 20px;
+    padding: 5px;
     background-color: #f1f1f1;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -299,14 +320,14 @@ body {
 .cardapio-intro h2 {
     font-size: 2rem;
     font-weight: bold;
-    color: #333;
+    color: #44434a;
     margin: 0;
     padding: 10px;
     text-transform: uppercase;
 }
 
 .cardapio {
-    background-color: #f9f9f9;
+    background-color: var(--cor-secundaria);
     padding: 50px 0;
     width: 100%;
     display: flex;
@@ -315,11 +336,11 @@ body {
 
 .conteudo-cardapio {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 0fr));
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0px 20px;
 }
 
 .crdp-item1,
@@ -330,11 +351,22 @@ body {
 .crdp-item6,
 .crdp-item7,
 .crdp-item8 {
-    background-color: #fff;
+    background-color: var(--cor-primaria);
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: all 0.3s ease;
+}
+
+.crdp-item1 a,
+.crdp-item2 a,
+.crdp-item3 a,
+.crdp-item4 a,
+.crdp-item5 a,
+.crdp-item6 a,
+.crdp-item7 a,
+.crdp-item8 a{
+    text-decoration: none;
 }
 
 .crdp-item1:hover,
@@ -352,10 +384,11 @@ body {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    border-bottom: 5px solid #0187a7;
+    border-bottom: 5px solid var(--cor-quartenaria);
 }
 
 .nome-drink {
+    font-family: var(--fonte-secundaria);
     text-align: center;
     font-size: 24px;
     font-weight: 600;
@@ -373,15 +406,17 @@ body {
 }
 
 .preco-drink {
+    font-family: var(--fonte-secundaria);
     text-align: center;
-    color: #0187a7;
+    color: var(--cor-quartenaria);
     font-size: 22px;
     margin-top: 20px;
 }
 
-.button-comprar {
-    background-color: #0187a7;
-    color: #fff;
+.button-ver {
+    font-family: var(--fonte-secundaria);
+    background: var(--cor-buttons);
+    color: var(--cor-primaria);
     font-size: 18px;
     font-weight: 500;
     border: none;
@@ -394,8 +429,8 @@ body {
     transition: all 0.3s ease;
 }
 
-.button-comprar:hover {
-    background-color: #016f87;
+.button-ver:hover {
+    background: var(--cor-buttons-houver);
 }
 
 /* Codigo para deixar alguns produtos escondidos */
@@ -407,12 +442,13 @@ body {
 /* Estilizando o botão "Ver Mais" */
 
 .ver-mais-btn {
+    font-family: var(--fonte-secundaria);
     display: block;
     width: 180px;
     padding: 10px;
     font-size: 18px;
-    background-color: #0187a7;
-    color: #fff;
+    background: var(--cor-buttons);
+    color: var(--cor-primaria);
     border: none;
     border-radius: 5px;
     margin: 20px auto;
@@ -421,14 +457,16 @@ body {
 }
 
 .ver-mais-btn:hover {
-    background-color: #036077;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    background: var(--cor-buttons-houver);
 }
 
 /* Estilizando o rodapé do site */
 
 footer {
     background-color: #222;
-    color: #fff;
+    color: var(--cor-primaria);
     padding: 40px 20px;
     text-align: left;
 }
@@ -460,6 +498,13 @@ footer {
 /* Estilizando o site para celular */
 
 @media screen and (max-width: 1170px) {
+
+    .fade-in {
+        opacity: 1;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
 
     .conteudo-home {
         flex-direction: column-reverse;
@@ -504,7 +549,7 @@ footer {
     }
 
     .conteudo-cardapio {
-        grid-template-columns: 1fr; /* Um item por linha em dispositivos menores */
+        grid-template-columns: 1fr;
     }
 
     .crdp-img1 {

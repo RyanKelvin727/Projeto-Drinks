@@ -1,12 +1,42 @@
 /* Importação de fontes do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
+:root {
+    --cor-primaria: #fff;
+    --cor-secundaria: #f9f9f9;
+    --cor-terciaria: #000000;
+    --cor-quartenaria: #ff7f50;
+    --cor-buttons: linear-gradient(135deg, #ff7f50, #ff6347);
+    --cor-buttons-houver: linear-gradient(135deg, #d2663e, #ef4629);
+
+    --fonte-principal: 'Roboto', sans-serif;
+    --fonte-secundaria: 'Poppins', sans-serif;
+}
+
 body {
-    background-color: #f9f9f9;
+    background-color: var(--cor-primaria);
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
+}
+
+/* Efeito de fade in */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Quando o elemento estiver visível */
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Outros ajustes para os elementos */
+.texto-home h1, .texto-home p, .button-cardapio, .img-home {
+    transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 .container {
@@ -15,7 +45,7 @@ body {
     max-width: 1200px;
     min-height: 80vh;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: var(--cor-primaria);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: 40px auto;
     overflow: hidden;
@@ -53,6 +83,7 @@ body {
 /* Estilizando o titulo do produto */
 
 .titulo {
+    font-family: var(--fonte-secundaria);
     font-size: 24px;
     font-weight: 700;
     color: #222;
@@ -75,6 +106,7 @@ body {
 /* Estilizando o preço dos produtos */
 
 .preco {
+    font-family: var(--fonte-secundaria);
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -90,7 +122,7 @@ body {
 .preco-desconto {
     font-size: 24px;
     font-weight: 600;
-    color: #0077cc;
+    color: var(--cor-quartenaria);
 }
 
 .buttons {
@@ -107,6 +139,7 @@ body {
 }
 
 .quantidade-controls .btn-control {
+    font-family: var(--fonte-secundaria);
     background-color: #f0f0f0;
     color: #333;
     border: none;
@@ -130,13 +163,14 @@ body {
     font-size: 18px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: var(--cor-primaria);
     color: #333;
 }
 
 /* Estilizando o botao de comprar */
 
 .buttons .btn-comprar {
+    font-family: var(--fonte-secundaria);
     flex: 1;
     height: 45px;
     border: none;
@@ -149,19 +183,19 @@ body {
 
 
 .buttons .btn-comprar {
-    background-color: #0077cc;
-    color: #fff;
+    background: var(--cor-buttons);
+    color: var(--cor-primaria);
 }
 
 .buttons .btn-comprar:hover {
-    background-color: #005fa3;
+    background: var(--cor-buttons-houver);
 }
 
 /* Estilizando o rodapé do site */
 
 footer {
     background-color: #222;
-    color: #fff;
+    color: var(--cor-primaria);
     padding: 40px 20px;
     text-align: left;
 }

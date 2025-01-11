@@ -1,3 +1,22 @@
+// Função para verificar quando os elementos entram na tela
+document.addEventListener("DOMContentLoaded", function () {
+    const fadeElements = document.querySelectorAll('.fade-in');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.5  // O elemento será considerado visível quando 50% dele estiver na tela
+    });
+
+    fadeElements.forEach(element => {
+        observer.observe(element);
+    });
+});
+
 // Script do botão para adicionar mais produtos (Cardapio)
 
 document.addEventListener('DOMContentLoaded', () => {
