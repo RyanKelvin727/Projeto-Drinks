@@ -23,23 +23,7 @@ body {
     background-color: var(--cor-primaria);
 }
 
-/* Efeito de fade in */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
 
-/* Quando o elemento estiver visível */
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Outros ajustes para os elementos */
-.texto-home h1, .texto-home p, .button-cardapio, .img-home {
-    transition: transform 0.5s ease, opacity 0.5s ease;
-}
 
 /* Estilizando a aba "Nossa Marca" do site */
 
@@ -498,14 +482,7 @@ footer {
 /* Estilizando o site para celular */
 
 @media screen and (max-width: 1170px) {
-
-    .fade-in {
-        opacity: 1;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
-    }
     
-
     .conteudo-home {
         flex-direction: column-reverse;
         text-align: center;

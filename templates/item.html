@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style/header-item.css">
-    <link rel="stylesheet" href="/style/main-item.css">
+    <link rel="stylesheet" href="/static/header-item.css">
+    <link rel="stylesheet" href="/static/main-item.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Página do Item</title>
 </head>
@@ -12,7 +12,7 @@
     <header>
         <nav class="nav-bar">
             <div class="nav-left">
-                <button class="back-button" onclick="window.location.href='index.html';">
+                <button class="back-button" onclick="window.location.href='/';">
                     <i class="fa-solid fa-arrow-left"></i> Voltar
                 </button>
             </div>
@@ -23,30 +23,30 @@
     </header>
     <main>
         <div class="container">
-            <div class="div-img fade-in">
-                <img src="/assets/Drink-Morango.jpg" alt="">
+            <div class="div-img">
+                <img src="/static/img/Drink-Morango.jpg" alt="">
             </div>
-            <div class="div-texto fade-in">
+            <div class="div-texto">
                 <div class="titulo">
                     <h1>Drink de morango</h1>
                 </div>
                 <hr>
-                <div class="descricao fade-in">
+                <div class="descricao">
                     <p>Delicioso e refrescante, este drink de morango combina o sabor doce e vibrante dos morangos frescos com um toque suave de licor, criando uma bebida leve e perfeita para qualquer ocasião. Servido gelado, é a escolha ideal para quem busca uma explosão de sabor frutado e refrescante em cada gole.</p>
                 </div>
                 <hr>
-                <div class="preco fade-in">
+                <div class="preco">
                     <span class="preco-original">R$ 27,00</span>
                     <span class="preco-desconto">R$ 24,30</span>
                 </div>
                 
-                <div class="buttons fade-in">
+                <div class="buttons">
                     <div class="quantidade-controls">
                         <button id="tirar" class="btn-control">-</button>
                         <input type="text" id="quantidade" value="1" readonly>
                         <button id="botar" class="btn-control">+</button>
                     </div>
-                    <button class="btn-comprar fade-in">Comprar</button>
+                    <button class="btn-comprar">Comprar</button>
                 </div>
             </div>
         </div>
@@ -69,6 +69,6 @@
             </div>
         </div>
     </footer>
-    <script src="/style/script.js"></script>
+    <script src="/static/script.js"></script>
 </body>
 </html>
