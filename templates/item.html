@@ -41,7 +41,7 @@
                 <div class="preco">
                     <!-- Preço original e com desconto -->
                     <span class="preco-original">R$ {{ produto.preco | round(2) }}</span>
-                    <span class="preco-desconto">R$ 0</span>
+                    <span class="preco-desconto">R$ {{ produto.preco_desconto | round(2) }}</span>
                 </div>
                 
                 <div class="buttons">
@@ -74,5 +74,6 @@
         </div>
     </footer>
     <script src="/static/script.js"></script>
+    <script src="/static/header-script.js"></script>
 </body>
 </html>
