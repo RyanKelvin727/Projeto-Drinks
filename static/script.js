@@ -1,24 +1,4 @@
-// Função para verificar quando os elementos entram na tela
-document.addEventListener("DOMContentLoaded", function () {
-    const fadeElements = document.querySelectorAll('.fade-in');
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, {
-        threshold: 0.5  // O elemento será considerado visível quando 50% dele estiver na tela
-    });
-
-    fadeElements.forEach(element => {
-        observer.observe(element);
-    });
-});
-
 // Script do botão para adicionar mais produtos (Cardapio)
-
 document.addEventListener('DOMContentLoaded', () => {
     const quantidadeInput = document.getElementById('quantidade');
     const botarButton = document.getElementById('botar');
@@ -37,8 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Script do botão "Ver mais" (Cardápio)
 
+
+// Script do botão "Ver mais" (Cardápio)
 document.getElementById("ver-mais").addEventListener("click", function() {
     var itensEscondidos = document.querySelector(".conteudo-cardapio .escondido");
     if (itensEscondidos) {
@@ -48,32 +29,9 @@ document.getElementById("ver-mais").addEventListener("click", function() {
     this.style.display = "none";
 });
 
-// Script para mostrar na nav-bar onde o usuário está
 
-const contentBlocks = document.querySelectorAll("div[id]");
-const navLinks = document.querySelectorAll(".nav-link");
-
-window.addEventListener("scroll", () => {
-    let current = "";
-
-     contentBlocks.forEach((block) => {
-        const blockTop = block.offsetTop;
-        const blockHeight = block.offsetHeight;
-        if (pageYOffset >= blockTop - blockHeight / 3) {
-            current = block.getAttribute("id");
-        }
-    });
-
-    navLinks.forEach((link) => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === `#${current}`) {
-            link.classList.add("active");
-        }
-    });
-});
 
 // Script do menu para celulares
-
 const menuToggle = document.querySelector('.menu-toggle');
 const navList = document.querySelector('.nav-list');
 const navLink = document.querySelectorAll('.nav-item a');
@@ -88,8 +46,9 @@ navLink.forEach(link => {
     });
 });
 
-// Script do carrossel de ofertas
 
+
+// Script do carrossel de ofertas
 let slider = document.querySelector('.slider .list');
 let items = document.querySelectorAll('.slider .list .item');
 let next = document.getElementById('next');
@@ -132,6 +91,3 @@ dots.forEach((li, key) => {
 window.onresize = function(event) {
     reloadSlider();
 };
-
-
-

@@ -38,6 +38,8 @@
                     <p>{{ produto.descricao }}</p>
                 </div>
                 <hr>
+                <!-- Exibir Tamanho -->
+                <p class="tamanho"><strong>Tamanho:</strong> <span>{{ produto.tamanho }} ml</span></p>
                 <div class="preco">
                     <!-- Preço original e com desconto -->
                     <span class="preco-original">R$ {{ produto.preco | round(2) }}</span>

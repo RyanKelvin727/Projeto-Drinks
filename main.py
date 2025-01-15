@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///produtos.db'  # Banco de dados SQLite
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///produtos.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -11,8 +11,9 @@ class Produto(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(100), nullable=False)
     descricao = db.Column(db.String(200), nullable=False)
+    tamanho = db.Column(db.Float, nullable=False)
     preco = db.Column(db.Float, nullable=False)
-    preco_desconto = db.Column(db.Float, nullable=True)  # Novo campo para preço com desconto
+    preco_desconto = db.Column(db.Float, nullable=True) 
     image_url = db.Column(db.String(200), nullable=False)
 
 # Rota inicial - listar produtos
@@ -29,34 +30,42 @@ def item(id):
 
 # Rota para criar, editar ou excluir produtos - CRUD em um único arquivo
 @app.route('/crud', methods=['GET', 'POST'])
-def crud():
+@app.route('/crud/<int:id>', methods=['GET', 'POST'])  # Alteração: permite passar o id via URL
+def crud(id=None):
+    produto = Produto.query.get(id) if id else None  # Se um id for fornecido, pega o produto correspondente, caso contrário, cria um novo produto
+
     if request.method == 'POST':
         nome = request.form['nome']
         descricao = request.form['descricao']
         preco = float(request.form['preco'])
         preco_desconto = float(request.form['preco_desconto']) if request.form.get('preco_desconto') else preco  # Preço com desconto
         image_url = request.form['image_url']
+        tamanho = float(request.form['tamanho'])  # Nova variável para tamanho
         
-        # Verifica se estamos criando ou editando
-        id_produto = request.form.get('id')
-        if id_produto:
-            produto = Produto.query.get(id_produto)
+        if produto:
+            # Se o produto existir, edita
             produto.nome = nome
             produto.descricao = descricao
             produto.preco = preco
             produto.preco_desconto = preco_desconto
             produto.image_url = image_url
+            produto.tamanho = tamanho  # Atualiza o tamanho
         else:
-            novo_produto = Produto(nome=nome, descricao=descricao, preco=preco, preco_desconto=preco_desconto, image_url=image_url)
+            # Se não existir produto, cria um novo
+            novo_produto = Produto(nome=nome, descricao=descricao, preco=preco, preco_desconto=preco_desconto, image_url=image_url, tamanho=tamanho)
             db.session.add(novo_produto)
         
         db.session.commit()
-        return redirect(url_for('index'))
+        return redirect(url_for('index'))  # Redireciona para a página inicial após salvar ou editar o produto
 
-    # Se for GET, mostra o formulário de CRUD
-    produto_id = request.args.get('id')
-    produto = Produto.query.get(produto_id) if produto_id else None
-    return render_template('crud.html', produto=produto)
+    return render_template('crud.html', produto=produto)  # Passa o produto (se houver) para o template
+
+
+
+    # # Se for GET, mostra o formulário de CRUD
+    # produto_id = request.args.get('id')
+    # produto = Produto.query.get(produto_id) if produto_id else None
+    # return render_template('crud.html', produto=produto)
 
 
 # Rota para excluir um produto
