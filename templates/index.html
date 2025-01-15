@@ -134,81 +134,31 @@
         <div class="cardapio">
                 <!-- Itens que aparecem inicialmente -->
                 <div class="conteudo-cardapio">
-                    <div class="crdp-item1">
-                        <a href="/item"><img class="crdp-img1" src="/static/img/Drink-Morango.jpg" alt=""></a>
+                    {% for produto in produtos[:4] %}  <!-- Exibe os primeiros 4 produtos -->
+                    <div class="crdp-item{{ loop.index }}">
+                        <a href="/item/{{ produto.id }}"><img class="crdp-img1" src="{{ produto.image_url }}" alt=""></a>
                         <div>
-                            <h1 class="nome-drink">Drink de morango</h1>
-                            <p class="desc-drink">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, voluptatum.</p>
-                            <h2 class="preco-drink">R$ 24,30</h2>
-                            <a href="/item"><button class="button-ver">Ver</button></a>
+                            <h1 class="nome-drink">{{ produto.nome }}</h1>
+                            <p class="desc-drink">{{ produto.descricao }}</p>
+                            <h2 class="preco-drink">R$ {{ produto.preco | round(2) }}</h2>
+                            <a href="/item/{{ produto.id }}"><button class="button-ver">Ver</button></a>
                         </div>
                     </div>
-                    <div class="crdp-item2">
-                        <a href="/item"><img class="crdp-img1" src="/static/img/Drink-Morango.jpg" alt=""></a>
-                        <div>
-                            <h1 class="nome-drink">Drink de morango</h1>
-                            <p class="desc-drink">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, voluptatum.</p>
-                            <h2 class="preco-drink">R$ 24,30</h2>
-                            <a href="/item"><button class="button-ver">Ver</button></a>
-                        </div>
-                    </div>
-                    <div class="crdp-item3">
-                        <a href="/item"><img class="crdp-img1" src="/static/img/Drink-Morango.jpg" alt=""></a>
-                        <div>
-                            <h1 class="nome-drink">Drink de morango</h1>
-                            <p class="desc-drink">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, voluptatum.</p>
-                            <h2 class="preco-drink">R$ 24,30</h2>
-                            <a href="/item"><button class="button-ver">Ver</button></a>
-                        </div>
-                    </div>
-                    <div class="crdp-item4">
-                        <a href="/item"><img class="crdp-img1" src="/static/img/Drink-Morango.jpg" alt=""></a>
-                        <div>
-                            <h1 class="nome-drink">Drink de morango</h1>
-                            <p class="desc-drink">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, voluptatum.</p>
-                            <h2 class="preco-drink">R$ 24,30</h2>
-                            <a href="/item"><button class="button-ver">Ver</button></a>
-                        </div>
-                    </div>
+                    {% endfor %}
+                    
                     <!-- Itens ocultos inicialmente -->
                     <div class="conteudo-cardapio escondido">
-                        <div class="crdp-item5">
-                            <a href="/item"><img class="crdp-img1" src="/static/img/Drink-Morango.jpg" alt=""></a>
+                        {% for produto in produtos[4:] %}  <!-- Exibe os outros produtos a partir do 5º -->
+                        <div class="crdp-item{{ loop.index + 4 }}">
+                            <a href="/item/{{ produto.id }}"><img class="crdp-img1" src="{{ produto.image_url }}" alt=""></a>
                             <div>
-                                <h1 class="nome-drink">Drink de morango</h1>
-                                <p class="desc-drink">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, voluptatum.</p>
-                                <h2 class="preco-drink">R$ 24,30</h2>
-                                <a href="/item"><button class="button-ver">Ver</button></a>
+                                <h1 class="nome-drink">{{ produto.nome }}</h1>
+                                <p class="desc-drink">{{ produto.descricao }}</p>
+                                <h2 class="preco-drink">R$ {{ produto.preco | round(2) }}</h2>
+                                <a href="/item/{{ produto.id }}"><button class="button-ver">Ver</button></a>
                             </div>
                         </div>
-                        <div class="crdp-item6">
-                            <a href="/item"><img class="crdp-img1" src="/static/img/Drink-Morango.jpg" alt=""></a>
-                            <div>
-                                <h1 class="nome-drink">Drink de morango</h1>
-                                <p class="desc-drink">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, voluptatum.</p>
-                                <h2 class="preco-drink">R$ 24,30</h2>
-                                <a href="/item"><button class="button-ver">Ver</button></a>
-                            </div>
-                        </div>
-                        <div class="crdp-item7">
-                            <a href="/item"><img class="crdp-img1" src="/static/img/Drink-Morango.jpg" alt=""></a>
-                            <div>
-                                <h1 class="nome-drink">Drink de morango</h1>
-                                <p class="desc-drink">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, voluptatum.</p>
-                                <h2 class="preco-drink">R$ 24,30</h2>
-                                <a href="/item"><button class="button-ver">Ver</button></a>
-                            </div>
-                        </div>
-                        <div class="crdp-item8">
-                            <a href="/item"><img class="crdp-img1" src="/static/img/Drink-Morango.jpg" alt=""></a>
-                            <div>
-                                <h1 class="nome-drink">Drink de morango</h1>
-                                <p class="desc-drink">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas, voluptatum.</p>
-                                <h2 class="preco-drink">R$ 24,30</h2>
-                                <a href="/item"><button class="button-ver">Ver</button></a>
-                            </div>
-                        </div>
-
+                        {% endfor %}
                     </div>
                     <!-- Botão de "Ver mais" -->
                     <button id="ver-mais" class="ver-mais-btn">Ver mais</button>

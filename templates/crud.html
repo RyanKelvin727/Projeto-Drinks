@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Produto</title>
+</head>
+<body>
+    <h1>{{ 'Editar Produto' if produto else 'Criar Produto' }}</h1>
+    <form method="POST">
+        {% if produto %}
+        <input type="hidden" name="id" value="{{ produto.id }}">
+        {% endif %}
+        
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" value="{{ produto.nome if produto else '' }}" required><br>
+
+        <label for="descricao">Descrição:</label>
+        <textarea name="descricao" required>{{ produto.descricao if produto else '' }}</textarea><br>
+
+        <label for="preco">Preço:</label>
+        <input type="number" step="0.01" name="preco" value="{{ produto.preco if produto else '' }}" required><br>
+
+        <label for="preco_desconto">Preço com Desconto:</label>
+        <input type="number" step="0.01" name="preco_desconto" value="{{ produto.preco_desconto if produto else '' }}"><br>
+
+        <label for="image_url">URL da Imagem:</label>
+        <input type="text" name="image_url" value="{{ produto.image_url if produto else '' }}" required><br><br>
+
+        <button type="submit">{{ 'Salvar alterações' if produto else 'Criar Produto' }}</button>
+    </form>
+
+    {% if produto %}
+    <form action="{{ url_for('delete', id=produto.id) }}" method="POST">
+        <button type="submit">Excluir Produto</button>
+    </form>
+    {% endif %}
+</body>
+</html>

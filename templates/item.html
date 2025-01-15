@@ -24,20 +24,24 @@
     <main>
         <div class="container">
             <div class="div-img">
-                <img src="/static/img/Drink-Morango.jpg" alt="">
+                <!-- Imagem do produto dinâmica -->
+                <img src="{{ produto.image_url }}" alt="{{ produto.nome }}">
             </div>
             <div class="div-texto">
                 <div class="titulo">
-                    <h1>Drink de morango</h1>
+                    <!-- Nome do produto -->
+                    <h1>{{ produto.nome }}</h1>
                 </div>
                 <hr>
                 <div class="descricao">
-                    <p>Delicioso e refrescante, este drink de morango combina o sabor doce e vibrante dos morangos frescos com um toque suave de licor, criando uma bebida leve e perfeita para qualquer ocasião. Servido gelado, é a escolha ideal para quem busca uma explosão de sabor frutado e refrescante em cada gole.</p>
+                    <!-- Descrição do produto -->
+                    <p>{{ produto.descricao }}</p>
                 </div>
                 <hr>
                 <div class="preco">
-                    <span class="preco-original">R$ 27,00</span>
-                    <span class="preco-desconto">R$ 24,30</span>
+                    <!-- Preço original e com desconto -->
+                    <span class="preco-original">R$ {{ produto.preco | round(2) }}</span>
+                    <span class="preco-desconto">R$ 0</span>
                 </div>
                 
                 <div class="buttons">
