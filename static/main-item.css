@@ -85,6 +85,28 @@ body {
     margin-bottom: 20px;
 }
 
+/* Estilizando o campo de Tamanho */
+.tamanho {
+    font-family: var(--fonte-secundaria);
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    padding: 10px 0px;
+    margin-top: 5px;
+}
+
+/* Adicionando uma borda e destacando o campo de Tamanho */
+.tamanho span {
+    font-size: 16px;
+    color: #ff7f50; /* Usando a cor principal para destacar o valor */
+    font-weight: normal;
+    background-color: #f0f0f0;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+
 /* Estilizando o preço dos produtos */
 
 .preco {

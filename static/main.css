@@ -381,13 +381,21 @@ body {
     padding: 0 15px;
 }
 
+/* Estilo para limitar a descrição a 3 linhas */
 .desc-drink {
+    height: 60px;
     text-align: center;
     font-size: 16px;
     color: #666;
     margin-top: 10px;
     padding: 0 15px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;  /* Necessário para o funcionamento do -webkit-line-clamp */
+    -webkit-line-clamp: 3;  /* Limita a 3 linhas */
+    overflow: hidden;  /* Esconde o conteúdo que ultrapassar as 3 linhas */
+    text-overflow: ellipsis;  /* Adiciona '...' no final do texto cortado */
 }
+
 
 .preco-drink {
     font-family: var(--fonte-secundaria);
