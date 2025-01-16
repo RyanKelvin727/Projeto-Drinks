@@ -24,24 +24,19 @@
     <main>
         <div class="container">
             <div class="div-img">
-                <!-- Imagem do produto dinâmica -->
                 <img src="{{ produto.image_url }}" alt="{{ produto.nome }}">
             </div>
             <div class="div-texto">
                 <div class="titulo">
-                    <!-- Nome do produto -->
                     <h1>{{ produto.nome }}</h1>
                 </div>
                 <hr>
                 <div class="descricao">
-                    <!-- Descrição do produto -->
                     <p>{{ produto.descricao }}</p>
                 </div>
                 <hr>
-                <!-- Exibir Tamanho -->
                 <p class="tamanho"><strong>Tamanho:</strong> <span>{{ produto.tamanho }} ml</span></p>
                 <div class="preco">
-                    <!-- Preço original e com desconto -->
                     <span class="preco-original">R$ {{ produto.preco | round(2) }}</span>
                     <span class="preco-desconto">R$ {{ produto.preco_desconto | round(2) }}</span>
                 </div>

@@ -135,9 +135,8 @@
 
         <!-- Codigo do CARDAPIO -->
         <div class="cardapio">
-                <!-- Itens que aparecem inicialmente -->
                 <div class="conteudo-cardapio">
-                    {% for produto in produtos[:4] %}  <!-- Exibe os primeiros 4 produtos -->
+                    {% for produto in produtos[:4] %}
                     <div class="crdp-item{{ loop.index }}">
                         <a href="/item/{{ produto.id }}"><img class="crdp-img1" src="{{ produto.image_url }}" alt=""></a>
                         <div>
@@ -148,10 +147,8 @@
                         </div>
                     </div>
                     {% endfor %}
-                    
-                    <!-- Itens ocultos inicialmente -->
                     <div class="conteudo-cardapio escondido">
-                        {% for produto in produtos[4:] %}  <!-- Exibe os outros produtos a partir do 5º -->
+                        {% for produto in produtos[4:] %}
                         <div class="crdp-item{{ loop.index + 4 }}">
                             <a href="/item/{{ produto.id }}"><img class="crdp-img1" src="{{ produto.image_url }}" alt=""></a>
                             <div>
@@ -165,7 +162,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Botão de "Ver mais" -->
             <button id="ver-mais" class="ver-mais-btn">Ver mais</button>
     </main>
     <script src="/static/script.js"></script>

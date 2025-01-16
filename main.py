@@ -24,23 +24,24 @@ def index():
 
 @app.route('/item/<int:id>')
 def item(id):
-    produto = Produto.query.get_or_404(id)  # Obtém o produto pelo ID
-    return render_template('item.html', produto=produto)  # Passa o produto para o template item.html
+    produto = Produto.query.get_or_404(id)
+    return render_template('item.html', produto=produto)
 
 
-# Rota para criar, editar ou excluir produtos - CRUD em um único arquivo
+# Rota para criar, editar ou excluir produtos
 @app.route('/crud', methods=['GET', 'POST'])
-@app.route('/crud/<int:id>', methods=['GET', 'POST'])  # Alteração: permite passar o id via URL
+@app.route('/crud/<int:id>', methods=['GET', 'POST'])
 def crud(id=None):
-    produto = Produto.query.get(id) if id else None  # Se um id for fornecido, pega o produto correspondente, caso contrário, cria um novo produto
+    produto = Produto.query.get(id) if id else None
+    
 
     if request.method == 'POST':
         nome = request.form['nome']
         descricao = request.form['descricao']
         preco = float(request.form['preco'])
-        preco_desconto = float(request.form['preco_desconto']) if request.form.get('preco_desconto') else preco  # Preço com desconto
+        preco_desconto = float(request.form['preco_desconto']) if request.form.get('preco_desconto') else preco
         image_url = request.form['image_url']
-        tamanho = float(request.form['tamanho'])  # Nova variável para tamanho
+        tamanho = float(request.form['tamanho'])
         
         if produto:
             # Se o produto existir, edita
@@ -49,7 +50,7 @@ def crud(id=None):
             produto.preco = preco
             produto.preco_desconto = preco_desconto
             produto.image_url = image_url
-            produto.tamanho = tamanho  # Atualiza o tamanho
+            produto.tamanho = tamanho 
         else:
             # Se não existir produto, cria um novo
             novo_produto = Produto(nome=nome, descricao=descricao, preco=preco, preco_desconto=preco_desconto, image_url=image_url, tamanho=tamanho)
@@ -76,7 +77,8 @@ def delete(id):
     db.session.commit()
     return redirect(url_for('index'))
 
+# Cria o banco de dados
 if __name__ == '__main__':
     with app.app_context():
-        db.create_all()  # Cria o banco de dados
+        db.create_all() 
     app.run(debug=True)
