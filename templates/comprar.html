@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/compra-e-tabela.css">
+    <title>Comprar Produto</title>
+</head>
+<body>
+    <h1>Comprar Produto: {{ produto.nome }}</h1>
+    <form method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <br>
+        <label for="matricula">Matrícula:</label>
+        <input type="text" id="matricula" name="matricula" required>
+        <br>
+        <button type="submit">Confirmar Compra</button>
+    </form>
+</body>
+</html>

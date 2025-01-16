@@ -1,0 +1,213 @@
+/* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+
+/* Formulário de compra */
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form button {
+    width: 100%;
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+/* Estilo geral da tabela */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabeçalho da tabela */
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #007bff;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+/* Linha alternada */
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Estilo das células de "Ações" */
+table td:last-child {
+    text-align: center; /* Centraliza a célula de ações */
+    padding: 0; /* Remove o padding extra */
+}
+
+/* Estilo do botão de lixeira */
+.delete-btn {
+    background: none;
+    border: none;
+    color: #6c757d; /* Cor cinza para a lixeira */
+    cursor: pointer;
+    padding: 5px;
+    font-size: 16px; /* Diminui o tamanho do ícone */
+    transition: transform 0.2s ease, color 0.3s ease, background-color 0.3s ease;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px; /* Ajusta a largura do botão */
+    height: 30px; /* Ajusta a altura do botão */
+    text-align: center; /* Garante que o conteúdo fique centralizado */
+    line-height: 1; /* Ajusta o alinhamento vertical do ícone */
+}
+
+/* Efeito ao passar o mouse sobre o ícone */
+.delete-btn:hover {
+    color: #fff;
+    background-color: #dc3545; /* Cor vermelha ao passar o mouse */
+    transform: scale(1.1); /* Aumenta o ícone */
+}
+
+/* Foco no botão */
+.delete-btn:focus {
+    outline: none;
+}
+
+/* Efeito de animação de lixeira */
+.delete-btn i {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.delete-btn:hover i {
+    transform: rotate(15deg); /* Efeito de rotação suave */
+}
+/* Estilo do formulário */
+form {
+    width: 300px; /* Define a largura do formulário */
+    margin: 20px auto; /* Centraliza o formulário */
+    padding: 10px;
+    background-color: #f8f9fa; /* Cor de fundo clara */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo dos campos de entrada */
+form input[type="text"], form input[type="number"] {
+    width: 100%; /* Preenche a largura total do formulário */
+    padding: 8px; /* Reduz o padding para deixar mais compacto */
+    font-size: 14px; /* Reduz o tamanho da fonte */
+    border: 1px solid #ccc; /* Bordas leves */
+    border-radius: 4px; /* Bordas arredondadas */
+    margin-bottom: 10px; /* Espaço entre os campos */
+    box-sizing: border-box; /* Ajusta a caixa de modelo */
+}
+
+/* Estilo do botão de envio */
+form button {
+    width: 100%; /* Largura total */
+    padding: 8px; /* Padding mais leve */
+    background-color: #007bff; /* Cor do botão */
+    color: #fff; /* Cor do texto */
+    font-size: 14px; /* Reduz o tamanho da fonte */
+    border: none; /* Remove a borda padrão */
+    border-radius: 4px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de clique */
+    transition: background-color 0.3s ease; /* Efeito de transição */
+}
+
+/* Efeito ao passar o mouse no botão */
+form button:hover {
+    background-color: #0056b3; /* Cor do botão ao passar o mouse */
+}
+
+/* Ajustes no ícone da lixeira no formulário */
+form .delete-btn {
+    background: none;
+    border: none;
+    color: #6c757d;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 16px; /* Tamanho reduzido para o ícone */
+    transition: transform 0.2s ease, color 0.3s ease, background-color 0.3s ease;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px; /* Ajusta o tamanho do botão */
+    height: 30px; /* Ajusta o tamanho do botão */
+    text-align: center;
+    line-height: 1;
+}
+
+/* Efeito ao passar o mouse sobre a lixeira */
+form .delete-btn:hover {
+    color: #fff;
+    background-color: #dc3545;
+    transform: scale(1.1);
+}
+
+
+
+

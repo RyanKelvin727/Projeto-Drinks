@@ -171,28 +171,37 @@ body {
     color: #333;
 }
 
-/* Estilizando o botao de comprar */
-
-.buttons .btn-comprar {
+/* Estilizando o nome "Comprar" dentro do botão */
+.buttons .btn {
     font-family: var(--fonte-secundaria);
+    background: var(--cor-buttons);
     flex: 1;
     height: 45px;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 18px;  /* Aumenta o tamanho da fonte */
+    font-weight: 700;  /* Deixa a fonte mais forte */
     cursor: pointer;
     transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase; /* Deixa o texto em maiúsculas */
+    letter-spacing: 1px; /* Adiciona um pequeno espaçamento entre as letras */
 }
 
-
-.buttons .btn-comprar {
-    background: var(--cor-buttons);
-    color: var(--cor-primaria);
+a{
+    text-decoration: none;
+    color: var(--cor-primaria);  /* Mantém a cor do texto igual à cor primária */
 }
 
-.buttons .btn-comprar:hover {
+.buttons .btn:hover {
     background: var(--cor-buttons-houver);
+    transform: scale(1.05); /* Aumenta ligeiramente o botão quando passa o mouse */
+}
+
+.buttons .btn:active {
+    transform: scale(0.98); /* Efeito de pressionamento, diminui o botão levemente */
 }
 
 /* Estilizando o rodapé do site */
@@ -255,7 +264,7 @@ footer {
     }
 
     .buttons .btn-add,
-    .buttons .btn-comprar {
+    .buttons .btn {
         width: 100%;
         margin-bottom: 10px;
     }
@@ -287,7 +296,7 @@ footer {
     }
 
     .buttons .btn-add,
-    .buttons .btn-comprar {
+    .buttons .btn {
         height: 40px;
         font-size: 14px;
     }

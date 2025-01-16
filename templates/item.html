@@ -46,7 +46,8 @@
                         <input type="text" id="quantidade" value="1" readonly>
                         <button id="botar" class="btn-control">+</button>
                     </div>
-                    <button class="btn-comprar">Comprar</button>
+                    <a href="{{ url_for('comprar', produto_id=produto.id) }}" class="btn btn-primary">Comprar</a>
+
                 </div>
             </div>
         </div>

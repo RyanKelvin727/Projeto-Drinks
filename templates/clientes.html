@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/compra-e-tabela.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <h1>Lista de Compras</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome do Comprador</th>
+                <th>Matrícula</th>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for compra in compras %}
+            <tr>
+                <td>{{ compra.nome_comprador }}</td>
+                <td>{{ compra.matricula }}</td>
+                <td>{{ compra.produto.nome }}</td>
+                <td>R$ {{ compra.produto.preco }}</td>
+                <td>
+                    <!-- Formulário para excluir a compra -->
+                    <form action="{{ url_for('excluir_compra', id=compra.id) }}" method="POST" style="display:inline;">
+                        <button type="submit" class="delete-btn">
+                            <i class="fas fa-trash-alt"></i> <!-- Ícone de lixeira -->
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="container">
+        <a href="{{ url_for('index') }}">Voltar para a Página Inicial</a>
+    </div>
+</body>
+</html>
