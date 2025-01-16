@@ -142,7 +142,7 @@
                         <div>
                             <h1 class="nome-drink">{{ produto.nome }}</h1>
                             <p class="desc-drink">{{ produto.descricao }}</p>
-                            <h2 class="preco-drink">R$ {{ produto.preco | round(2) }}</h2>
+                            <h2 class="preco-drink">R$ {{ produto.preco_desconto | round(2) }}</h2>
                             <a href="/item/{{ produto.id }}"><button class="button-ver">Ver</button></a>
                         </div>
                     </div>
@@ -154,7 +154,7 @@
                             <div>
                                 <h1 class="nome-drink">{{ produto.nome }}</h1>
                                 <p class="desc-drink">{{ produto.descricao }}</p>
-                                <h2 class="preco-drink">R$ {{ produto.preco | round(2) }}</h2>
+                                <h2 class="preco-drink">R$ {{ produto.preco_desconto | round(2) }}</h2>
                                 <a href="/item/{{ produto.id }}"><button class="button-ver">Ver</button></a>
                             </div>
                         </div>

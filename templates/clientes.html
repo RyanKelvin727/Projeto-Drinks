@@ -14,6 +14,7 @@
                 <th>Nome do Comprador</th>
                 <th>Matrícula</th>
                 <th>Produto</th>
+                <th>Tamanho (ml)</th>
                 <th>Preço</th>
                 <th>Ações</th>
             </tr>
@@ -24,7 +25,8 @@
                 <td>{{ compra.nome_comprador }}</td>
                 <td>{{ compra.matricula }}</td>
                 <td>{{ compra.produto.nome }}</td>
-                <td>R$ {{ compra.produto.preco }}</td>
+                <td>{{ compra.produto.tamanho }} ml</td> <!-- Tamanho em ml -->
+                <td>R$ {{ compra.produto.preco_desconto }}</td>
                 <td>
                     <!-- Formulário para excluir a compra -->
                     <form action="{{ url_for('excluir_compra', id=compra.id) }}" method="POST" style="display:inline;">
