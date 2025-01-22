@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/listagem.css">
+    <title>Lista de Produtos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <h1>Lista de Produtos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Tamanho</th>
+                <th>Preço</th>
+                <th>Preço com Desconto</th>
+                <th>Imagem</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for produto in produtos %}
+            <tr>
+                <td>{{ produto.id }}</td>
+                <td>{{ produto.nome }}</td>
+                <td>{{ produto.descricao }}</td>
+                <td>{{ produto.tamanho }}</td>
+                <td class="price">R$ {{ produto.preco }}</td>
+                <td class="price discount-price">R$ {{ produto.preco_desconto }}</td>
+                <td><img src="{{ produto.image }}" alt="{{ produto.nome }}"></td>
+                <td>
+                    <a href="/crud/{{produto.id}}" class="btn btn-edit">
+                        <i class="fas fa-edit"></i> Editar
+                    </a>
+                    <a href="/delete/{{produto.id}}" onclick="return confirm('Deseja realmente excluir?')" class="btn btn-delete">
+                        <i class="fas fa-trash"></i> Excluir
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="container">
+        <a href="{{ url_for('index') }}"><i class="fas fa-home"></i> Voltar para a Página Inicial</a>
+    </div>
+</body>
+</html>

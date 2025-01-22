@@ -1,9 +1,14 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+from werkzeug.utils import secure_filename
+
+UPLOAD_FOLDER = 'static/uploads'
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///produtos.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 db = SQLAlchemy(app)
 
 # Modelo Produto
@@ -14,7 +19,8 @@ class Produto(db.Model):
     tamanho = db.Column(db.Float, nullable=False)
     preco = db.Column(db.Float, nullable=False)
     preco_desconto = db.Column(db.Float, nullable=True)
-    image_url = db.Column(db.String(200), nullable=False)
+    image = db.Column(db.String(250), nullable=False)
+    # image_url = db.Column(db.String(200), nullable=False)
 
 # Modelo Compra
 class Compra(db.Model):
@@ -24,16 +30,70 @@ class Compra(db.Model):
     produto_id = db.Column(db.Integer, db.ForeignKey('produto.id'), nullable=False)
     produto = db.relationship('Produto', backref=db.backref('compras', lazy=True))
 
+# Rota para criar, editar ou excluir produtos
+@app.route('/crud', methods=['GET', 'POST'])
+@app.route('/crud/<int:id>', methods=['GET', 'POST'])
+def crud(id=None):
+    produto = Produto.query.get(id) if id else None
+
+    if request.method == 'POST':
+        nome = request.form['nome']
+        descricao = request.form['descricao']
+        preco = float(request.form['preco'])
+        preco_desconto = float(request.form['preco_desconto']) if request.form.get('preco_desconto') else preco
+        image = request.files['image']
+        tamanho = float(request.form['tamanho'])
+
+        image_path = f'{app.config["UPLOAD_FOLDER"]}/{secure_filename(image.filename)}'
+
+        if image_path != 'static/uploads/':
+            image_path = image_path
+        else:
+            image_path = produto.image
+
+        if produto:
+            produto.nome = nome
+            produto.descricao = descricao
+            produto.preco = preco
+            produto.preco_desconto = preco_desconto
+            produto.image = image_path
+            produto.tamanho = tamanho
+        else:
+            novo_produto = Produto(nome=nome, descricao=descricao, preco=preco, preco_desconto=preco_desconto, image=image_path, tamanho=tamanho)
+            db.session.add(novo_produto)
+        
+        image.save(image_path)
+        db.session.commit()
+        return redirect(url_for('index'))
+
+    return render_template('crud.html', produto=produto)
+
+# Rota para excluir um produto
+@app.route('/delete/<int:id>', methods=['GET'])
+def delete(id):
+    produto = Produto.query.get_or_404(id)
+    db.session.delete(produto)
+    db.session.commit()
+    return redirect(url_for('listagem'))
+
+
+# Rota para ver o item maior
+@app.route('/item/<int:id>')
+def item(id):
+    produto = Produto.query.get_or_404(id)
+    return render_template('item.html', produto=produto)
+
 # Rota inicial - listar produtos
 @app.route('/')
 def index():
     produtos = Produto.query.all()
     return render_template('index.html', produtos=produtos)
 
-@app.route('/item/<int:id>')
-def item(id):
-    produto = Produto.query.get_or_404(id)
-    return render_template('item.html', produto=produto)
+# Rota inicial - listar produtos
+@app.route('/listagem')
+def listagem():
+    produtos = Produto.query.all()
+    return render_template('listagem.html', produtos=produtos)
 
 # Rota para realizar a compra
 @app.route('/comprar/<int:produto_id>', methods=['GET', 'POST'])
@@ -66,45 +126,6 @@ def excluir_compra(id):
     db.session.delete(compra)
     db.session.commit()
     return redirect(url_for('listar_compras'))
-
-
-# Rota para criar, editar ou excluir produtos
-@app.route('/crud', methods=['GET', 'POST'])
-@app.route('/crud/<int:id>', methods=['GET', 'POST'])
-def crud(id=None):
-    produto = Produto.query.get(id) if id else None
-
-    if request.method == 'POST':
-        nome = request.form['nome']
-        descricao = request.form['descricao']
-        preco = float(request.form['preco'])
-        preco_desconto = float(request.form['preco_desconto']) if request.form.get('preco_desconto') else preco
-        image_url = request.form['image_url']
-        tamanho = float(request.form['tamanho'])
-
-        if produto:
-            produto.nome = nome
-            produto.descricao = descricao
-            produto.preco = preco
-            produto.preco_desconto = preco_desconto
-            produto.image_url = image_url
-            produto.tamanho = tamanho
-        else:
-            novo_produto = Produto(nome=nome, descricao=descricao, preco=preco, preco_desconto=preco_desconto, image_url=image_url, tamanho=tamanho)
-            db.session.add(novo_produto)
-
-        db.session.commit()
-        return redirect(url_for('index'))
-
-    return render_template('crud.html', produto=produto)
-
-# Rota para excluir um produto
-@app.route('/delete/<int:id>', methods=['POST'])
-def delete(id):
-    produto = Produto.query.get_or_404(id)
-    db.session.delete(produto)
-    db.session.commit()
-    return redirect(url_for('index'))
 
 # Cria o banco de dados
 if __name__ == '__main__':

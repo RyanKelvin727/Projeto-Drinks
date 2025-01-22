@@ -138,7 +138,7 @@
                 <div class="conteudo-cardapio">
                     {% for produto in produtos[:4] %}
                     <div class="crdp-item{{ loop.index }}">
-                        <a href="/item/{{ produto.id }}"><img class="crdp-img1" src="{{ produto.image_url }}" alt=""></a>
+                        <a href="/item/{{ produto.id }}"><img class="crdp-img1" src="{{ produto.image }}" alt=""></a>
                         <div>
                             <h1 class="nome-drink">{{ produto.nome }}</h1>
                             <p class="desc-drink">{{ produto.descricao }}</p>
@@ -150,7 +150,7 @@
                     <div class="conteudo-cardapio escondido">
                         {% for produto in produtos[4:] %}
                         <div class="crdp-item{{ loop.index + 4 }}">
-                            <a href="/item/{{ produto.id }}"><img class="crdp-img1" src="{{ produto.image_url }}" alt=""></a>
+                            <a href="/item/{{ produto.id }}"><img class="crdp-img1" src="{{ produto.image }}" alt=""></a>
                             <div>
                                 <h1 class="nome-drink">{{ produto.nome }}</h1>
                                 <p class="desc-drink">{{ produto.descricao }}</p>
