@@ -45,7 +45,12 @@
         </tbody>
     </table>
     <div class="container">
-        <a href="{{ url_for('index') }}"><i class="fas fa-home"></i> Voltar para a Página Inicial</a>
+        <a href="{{ url_for('index') }}" class="btn btn-home">
+            <i class="fas fa-home"></i> Voltar para a Página Inicial 
+        </a>
+        <a href="/crud" class="btn btn-create">
+            <i class="fas fa-plus"></i> Criar 
+        </a>
     </div>
 </body>
 </html>

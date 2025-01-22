@@ -13,8 +13,22 @@ h1 {
 .container {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    padding: 10px;
 }
+
+
+.btn-home {
+    background-color: #4CAF50; /* Exemplo de cor */
+}
+
+.btn-create {
+    background-color: #008CBA; /* Exemplo de cor */
+}
+
+.btn i {
+    margin-right: 5px;
+}
+
 a {
     text-decoration: none;
     font-size: 1.2rem;
@@ -69,7 +83,7 @@ img {
     border-radius: 5px;
     text-decoration: none;
     color: white;
-    display: inline-block;
+    display: inline;
     margin: 5px;
 }
 .btn-edit {
