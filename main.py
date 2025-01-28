@@ -65,8 +65,8 @@ def crud(id=None):
         image.save(image_path)
         db.session.commit()
         return redirect(url_for('index'))
-
-    return render_template('crud.html', produto=produto)
+    produtos = Produto.query.all()
+    return render_template('crud.html', produto=produto, produtos = produtos)
 
 # Rota para excluir um produto
 @app.route('/delete/<int:id>', methods=['GET'])
@@ -88,12 +88,6 @@ def item(id):
 def index():
     produtos = Produto.query.all()
     return render_template('index.html', produtos=produtos)
-
-# Rota inicial - listar produtos
-@app.route('/listagem')
-def listagem():
-    produtos = Produto.query.all()
-    return render_template('listagem.html', produtos=produtos)
 
 # Rota para realizar a compra
 @app.route('/comprar/<int:produto_id>', methods=['GET', 'POST'])
