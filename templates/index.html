@@ -132,12 +132,22 @@
         <div id="cardapio" class="cardapio-intro">
             <h2>Veja nosso cardápio</h2>
         </div>
-
+        <div me estiliza>
+            <div class="tipos" data-filter="bebidas">
+                <h2>Bebidas</h2>
+            </div>
+            <div class="tipos" data-filter="sorvetes">
+                <h2>Sorvetes</h2>
+            </div>
+            <div class="tipos" data-filter="musses">
+               <h2>Musses</h2>
+            </div>
+        </div>
         <!-- Codigo do CARDAPIO -->
         <div class="cardapio">
                 <div class="conteudo-cardapio">
-                    {% for produto in produtos[:4] %}
-                    <div class="crdp-item{{ loop.index }}">
+                    {% for produto in produtos %}
+                    <div class="crdp-item {{ produto.categoria}}">
                         <a href="/item/{{ produto.id }}"><img class="crdp-img1" src="{{ produto.image }}" alt=""></a>
                         <div>
                             <h1 class="nome-drink">{{ produto.nome }}</h1>
@@ -147,22 +157,8 @@
                         </div>
                     </div>
                     {% endfor %}
-                    <div class="conteudo-cardapio escondido">
-                        {% for produto in produtos[4:] %}
-                        <div class="crdp-item{{ loop.index + 4 }}">
-                            <a href="/item/{{ produto.id }}"><img class="crdp-img1" src="{{ produto.image }}" alt=""></a>
-                            <div>
-                                <h1 class="nome-drink">{{ produto.nome }}</h1>
-                                <p class="desc-drink">{{ produto.descricao }}</p>
-                                <h2 class="preco-drink">R$ {{ produto.preco_desconto | round(2) }}</h2>
-                                <a href="/item/{{ produto.id }}"><button class="button-ver">Ver</button></a>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
                 </div>
             </div>
-            <button id="ver-mais" class="ver-mais-btn">Ver mais</button>
     </main>
     <script src="/static/script.js"></script>
     <script src="/static/header-script.js"></script>

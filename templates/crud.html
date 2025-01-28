@@ -40,7 +40,15 @@
         {% else %}
         <input type="file" name="image" required><br><br>
         {% endif %}
-        
+
+   
+        <label for="categoria">Categoria</label>
+        <select id="categoria" name="categoria" required>
+            <option value="bebidas" {% if produto and produto.categoria == 'bebidas' %}selected{% endif %}>Bebidas</option>
+            <option value="sorvetes" {% if produto and produto.categoria == 'sorvetes' %}selected{% endif %}>Sorvetes</option>
+            <option value="musses" {% if produto and produto.categoria == 'musses' %}selected{% endif %}>Musses</option>
+        </select>
+  
         <!-- <label for="image_url">URL da Imagem:</label>
         <input type="text" name="image_url" value="{{ produto.image_url if produto else '' }}" required><br><br> -->
     

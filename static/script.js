@@ -1,23 +1,75 @@
-// Script do botão para adicionar mais produtos (Cardapio)
-document.addEventListener('DOMContentLoaded', () => {
-    const quantidadeInput = document.getElementById('quantidade');
-    const botarButton = document.getElementById('botar');
-    const tirarButton = document.getElementById('tirar');
-
-    botarButton.addEventListener('click', () => {
-        let currentValue = parseInt(quantidadeInput.value);
-        quantidadeInput.value = currentValue + 1;
-    });
-
-    tirarButton.addEventListener('click', () => {
-        let currentValue = parseInt(quantidadeInput.value);
-        if (currentValue > 1) {
-                quantidadeInput.value = currentValue - 1;
+document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".tipos");
+    const items = document.querySelectorAll(".crdp-item");
+    let activeFilter = null; // Para rastrear o filtro ativo
+  
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        const filter = button.getAttribute("data-filter");
+  
+        // Alternar o filtro ativo
+        if (activeFilter === filter) {
+          activeFilter = null; // Remover o filtro
+          showAllItems(); // Mostrar todos os itens
+        } else {
+          activeFilter = filter; // Atualizar o filtro ativo
+          filterItems(filter); // Filtrar itens
         }
+      });
     });
-});
+  
+    // Filtra os itens com a categoria selecionada
+    function filterItems(filter) {
+      items.forEach(item => {
+        if (item.classList.contains(filter)) {
+          fadeIn(item); // Se o item tiver a categoria, mostre-o
+        } else {
+          fadeOut(item); // Caso contrário, esconda
+        }
+      });
+    }
+  
+    // Mostra todos os itens
+    function showAllItems() {
+      items.forEach(item => fadeIn(item)); // Mostra todos os itens
+    }
+  
+    function fadeIn(element) {
+      element.style.display = "block"; // Garante que o item seja exibido como flex
+      setTimeout(() => {
+        element.style.transition = "opacity 0.5s ease";
+        element.style.opacity = "1"; // Aumenta a opacidade
+      }, 0);
+    }
+  
+    function fadeOut(element) {
+      element.style.transition = "opacity 0.5s ease";
+      element.style.opacity = "0"; // Diminuir a opacidade
+      setTimeout(() => {
+        element.style.display = "none"; // Esconde após o fade
+      }, 500); // Tempo igual ao do fade (0.5s)
+    }
+  
+  });
 
+// // Script do botão para adicionar mais produtos (Cardapio)
+// document.addEventListener('DOMContentLoaded', () => {
+//     const quantidadeInput = document.getElementById('quantidade');
+//     const botarButton = document.getElementById('botar');
+//     const tirarButton = document.getElementById('tirar');
 
+//     botarButton.addEventListener('click', () => {
+//         let currentValue = parseInt(quantidadeInput.value);
+//         quantidadeInput.value = currentValue + 1;
+//     });
+
+//     tirarButton.addEventListener('click', () => {
+//         let currentValue = parseInt(quantidadeInput.value);
+//         if (currentValue > 1) {
+//                 quantidadeInput.value = currentValue - 1;
+//         }
+//     });
+// });
 
 // Script do botão "Ver mais" (Cardápio)
 document.getElementById("ver-mais").addEventListener("click", function() {

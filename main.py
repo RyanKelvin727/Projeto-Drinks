@@ -20,7 +20,7 @@ class Produto(db.Model):
     preco = db.Column(db.Float, nullable=False)
     preco_desconto = db.Column(db.Float, nullable=True)
     image = db.Column(db.String(250), nullable=False)
-    # image_url = db.Column(db.String(200), nullable=False)
+    categoria = db.Column(db.String(50), nullable=False)  # Adicionando a categoria
 
 # Modelo Compra
 class Compra(db.Model):
@@ -43,6 +43,7 @@ def crud(id=None):
         preco_desconto = float(request.form['preco_desconto']) if request.form.get('preco_desconto') else preco
         image = request.files['image']
         tamanho = float(request.form['tamanho'])
+        categoria = request.form['categoria']  # Pegando a categoria do formulário
 
         image_path = f'{app.config["UPLOAD_FOLDER"]}/{secure_filename(image.filename)}'
 
@@ -58,15 +59,17 @@ def crud(id=None):
             produto.preco_desconto = preco_desconto
             produto.image = image_path
             produto.tamanho = tamanho
+            produto.categoria = categoria  # Atualizando a categoria
         else:
-            novo_produto = Produto(nome=nome, descricao=descricao, preco=preco, preco_desconto=preco_desconto, image=image_path, tamanho=tamanho)
+            novo_produto = Produto(nome=nome, descricao=descricao, preco=preco, preco_desconto=preco_desconto, image=image_path, tamanho=tamanho, categoria=categoria)
             db.session.add(novo_produto)
         
         image.save(image_path)
         db.session.commit()
         return redirect(url_for('index'))
+    
     produtos = Produto.query.all()
-    return render_template('crud.html', produto=produto, produtos = produtos)
+    return render_template('crud.html', produto=produto, produtos=produtos)
 
 # Rota para excluir um produto
 @app.route('/delete/<int:id>', methods=['GET'])
@@ -75,7 +78,6 @@ def delete(id):
     db.session.delete(produto)
     db.session.commit()
     return redirect(url_for('listagem'))
-
 
 # Rota para ver o item maior
 @app.route('/item/<int:id>')

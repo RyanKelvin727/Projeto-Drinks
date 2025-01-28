@@ -296,6 +296,49 @@ body {
 
 /* Estilizando o cardápio */
 
+/* Estilizando cada "tipos" */
+.tipos {
+    background-color: #f4f4f4; /* Cor de fundo clara */
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+    width: 150px;
+    cursor: pointer;
+}
+
+/* Efeito ao passar o mouse */
+.tipos:hover {
+    transform: scale(1.05); /* Aumenta levemente o tamanho */
+    background-color: #ffd700; /* Cor de fundo diferente ao passar o mouse */
+}
+
+/* Estilo para os títulos */
+.tipos h2 {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Adicionando cor de fundo e ajustando o alinhamento */
+.tipos[data-filter="Bebidas"] {
+    background-color: #00bcd4; /* Azul para Bebidas */
+    color: white;
+}
+
+.tipos[data-filter="Sorvetes"] {
+    background-color: #ff4081; /* Rosa para Sorvetes */
+    color: white;
+}
+
+.tipos[data-filter="Musses"] {
+    background-color: #8bc34a; /* Verde para Musses */
+    color: white;
+}
+
 .cardapio-intro {
     font-family: var(--fonte-secundaria);
     text-align: center;
@@ -333,14 +376,7 @@ body {
     padding: 0px 20px;
 }
 
-.crdp-item1,
-.crdp-item2,
-.crdp-item3,
-.crdp-item4,
-.crdp-item5,
-.crdp-item6,
-.crdp-item7,
-.crdp-item8 {
+.crdp-item{
     background-color: var(--cor-primaria);
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -348,25 +384,11 @@ body {
     transition: all 0.3s ease;
 }
 
-.crdp-item1 a,
-.crdp-item2 a,
-.crdp-item3 a,
-.crdp-item4 a,
-.crdp-item5 a,
-.crdp-item6 a,
-.crdp-item7 a,
-.crdp-item8 a{
+.crdp-item{
     text-decoration: none;
 }
 
-.crdp-item1:hover,
-.crdp-item2:hover,
-.crdp-item3:hover,
-.crdp-item4:hover,
-.crdp-item5:hover,
-.crdp-item6:hover,
-.crdp-item7:hover,
-.crdp-item8:hover {
+.crdp-item:hover{
     transform: scale(1.05);
 }
 
