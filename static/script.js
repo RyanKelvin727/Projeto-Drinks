@@ -52,54 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
   });
 
-// // Script do botão para adicionar mais produtos (Cardapio)
-// document.addEventListener('DOMContentLoaded', () => {
-//     const quantidadeInput = document.getElementById('quantidade');
-//     const botarButton = document.getElementById('botar');
-//     const tirarButton = document.getElementById('tirar');
-
-//     botarButton.addEventListener('click', () => {
-//         let currentValue = parseInt(quantidadeInput.value);
-//         quantidadeInput.value = currentValue + 1;
-//     });
-
-//     tirarButton.addEventListener('click', () => {
-//         let currentValue = parseInt(quantidadeInput.value);
-//         if (currentValue > 1) {
-//                 quantidadeInput.value = currentValue - 1;
-//         }
-//     });
-// });
-
-// Script do botão "Ver mais" (Cardápio)
-document.getElementById("ver-mais").addEventListener("click", function() {
-    var itensEscondidos = document.querySelector(".conteudo-cardapio .escondido");
-    if (itensEscondidos) {
-        itensEscondidos.classList.remove("escondido");
-    }
-
-    this.style.display = "none";
-});
-
-
-
-// Script do menu para celulares
-const menuToggle = document.querySelector('.menu-toggle');
-const navList = document.querySelector('.nav-list');
-const navLink = document.querySelectorAll('.nav-item a');
-
-menuToggle.addEventListener('click', () => {
-    navList.classList.toggle('open');
-});
-
-navLink.forEach(link => {
-    link.addEventListener('click', () => {
-        navList.classList.remove('open');
-    });
-});
-
-
-
 // Script do carrossel de ofertas
 let slider = document.querySelector('.slider .list');
 let items = document.querySelectorAll('.slider .list .item');
@@ -143,3 +95,38 @@ dots.forEach((li, key) => {
 window.onresize = function(event) {
     reloadSlider();
 };
+
+// // Script do botão para adicionar mais produtos (Cardapio)
+// document.addEventListener('DOMContentLoaded', () => {
+//     const quantidadeInput = document.getElementById('quantidade');
+//     const botarButton = document.getElementById('botar');
+//     const tirarButton = document.getElementById('tirar');
+
+//     botarButton.addEventListener('click', () => {
+//         let currentValue = parseInt(quantidadeInput.value);
+//         quantidadeInput.value = currentValue + 1;
+//     });
+
+//     tirarButton.addEventListener('click', () => {
+//         let currentValue = parseInt(quantidadeInput.value);
+//         if (currentValue > 1) {
+//                 quantidadeInput.value = currentValue - 1;
+//         }
+//     });
+// });
+
+// Script do menu para celulares
+const menuToggle = document.querySelector('.menu-toggle');
+const navList = document.querySelector('.nav-list');
+const navLink = document.querySelectorAll('.nav-item a');
+
+menuToggle.addEventListener('click', () => {
+    navList.classList.toggle('open');
+});
+
+navLink.forEach(link => {
+    link.addEventListener('click', () => {
+        navList.classList.remove('open');
+    });
+});
+

@@ -206,7 +206,7 @@ body {
 
 .ofertas {
     background-image: url("img/Background-do-site.jpg");
-    width: 100vw;
+    width: 100%;
     height: 70vh;
     /* background-color: #f8f9fa; */
     display: flex;
@@ -296,14 +296,27 @@ body {
 
 /* Estilizando o cardápio */
 
-/* Estilizando cada "tipos" */
+.filtro {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border-radius: 8px;
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 530px;
+    height: 100px;
+    gap: 20px;
+    padding: 0 20px;
+}
+
 .tipos {
-    background-color: #f4f4f4; /* Cor de fundo clara */
+    background-color: #f4f4f4; /* Cor de fundo clara, já utilizada em outras seções */
     padding: 10px 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, background-color 0.3s ease;
     text-align: center;
+    height: 45px;
     width: 150px;
     cursor: pointer;
 }
@@ -316,28 +329,32 @@ body {
 
 /* Estilo para os títulos */
 .tipos h2 {
-    font-family: 'Arial', sans-serif;
-    color: #333;
+    font-family: var(--fonte-secundaria);
     font-size: 18px;
     font-weight: bold;
     margin: 0;
 }
 
-/* Adicionando cor de fundo e ajustando o alinhamento */
-.tipos[data-filter="Bebidas"] {
-    background-color: #00bcd4; /* Azul para Bebidas */
+/* Adicionando cor de fundo e ajustando o alinhamento de acordo com cada filtro */
+.tipos[data-filter="bebidas"] {
+    background: var(--cor-buttons); /* Azul para Bebidas */
     color: white;
 }
 
-.tipos[data-filter="Sorvetes"] {
-    background-color: #ff4081; /* Rosa para Sorvetes */
+.tipos[data-filter="sorvetes"] {
+    background: var(--cor-buttons); /* Rosa para Sorvetes */
     color: white;
 }
 
-.tipos[data-filter="Musses"] {
-    background-color: #8bc34a; /* Verde para Musses */
+.tipos[data-filter="musses"] {
+    background: var(--cor-buttons); /* Verde para Musses */
     color: white;
 }
+
+.tipos:hover{
+    background: var(--cor-buttons-houver);
+}
+
 
 .cardapio-intro {
     font-family: var(--fonte-secundaria);
@@ -349,7 +366,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.cardapio-intro h2 {
+.cardapio-intro h1 {
     font-size: 2rem;
     font-weight: bold;
     color: #44434a;
@@ -385,6 +402,10 @@ body {
 }
 
 .crdp-item{
+    text-decoration: none;
+}
+
+a{
     text-decoration: none;
 }
 
@@ -556,13 +577,14 @@ footer {
     }
     
     .ofertas{
+        width: 100%;
         height: 70vh;
     }
     
-    .carrosel {
-        width: 90vw;
-        height: 30vh;
-        margin-left: 20px;
+    .item img{
+        width: 100%;
+        max-width: 300px;
+        height: auto;
     }
 
     .conteudo-cardapio {
