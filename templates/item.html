@@ -17,8 +17,8 @@
                 </button>
             </div>
             <div class="logo">
-                <h1>EL <br>VERANO</h1>
-            </div>
+                <img src="/static/img/Logo-ElVerano-removebg-preview.png" alt="" />
+              </div>
         </nav>
     </header>
     <main>
@@ -41,11 +41,6 @@
                     <span class="preco-desconto">R$ {{ produto.preco_desconto | round(2) }}</span>
                 </div>
                 <div class="buttons">
-                    <div class="quantidade-controls">
-                        <button id="tirar" class="btn-control">-</button>
-                        <input type="text" id="quantidade" value="1" readonly>
-                        <button id="botar" class="btn-control">+</button>
-                    </div>
                     <a href="{{ url_for('comprar', produto_id=produto.id) }}" class="btn btn-primary">Comprar</a>
 
                 </div>

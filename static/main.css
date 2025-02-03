@@ -575,7 +575,9 @@ footer {
     }
 
     .filtro{
-        width: 100%;
+        position: relative;
+        width: 80%;
+        left: -40px;
     }
 
     .conteudo-cardapio {

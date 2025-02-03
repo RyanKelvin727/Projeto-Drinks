@@ -25,7 +25,7 @@ header {
     position: sticky;
     top: 0;
     width: 100%;
-    background-color: var(--cor-primaria);
+    background-color: var(--cor-secundaria);
     z-index: 3;
 }
 
@@ -74,8 +74,10 @@ header {
     right: 10%; /* Ajusta a logo para o lado direito */
 }
 
-.logo h1 {
-    color: var(--cor-terciaria);
+.logo img{
+    position: absolute;
+    width: 100px;
+    height: 100px;
 }
 
 /* Nav-list */
