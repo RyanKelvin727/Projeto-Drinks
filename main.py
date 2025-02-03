@@ -66,7 +66,7 @@ def crud(id=None):
         
         image.save(image_path)
         db.session.commit()
-        return redirect(url_for('index'))
+        return redirect(url_for('crud'))
     
     produtos = Produto.query.all()
     return render_template('crud.html', produto=produto, produtos=produtos)
@@ -77,7 +77,7 @@ def delete(id):
     produto = Produto.query.get_or_404(id)
     db.session.delete(produto)
     db.session.commit()
-    return redirect(url_for('listagem'))
+    return redirect(url_for('crud'))
 
 # Rota para ver o item maior
 @app.route('/item/<int:id>')

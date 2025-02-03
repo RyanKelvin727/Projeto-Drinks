@@ -9,7 +9,9 @@
     <title>EL VERANO</title>
 </head>
 <body> 
+
     <!-- Criando o cabeçalho do site -->
+
     <header>
         <nav class="nav-bar">
             <div class="logo">
@@ -32,68 +34,6 @@
         </div>
     </header>
     <main>
-        <!-- Codigo do HOME -->
-        <div id="home" class="home">
-            <div class="conteudo-home">
-                <div class="texto-home">
-                    <h1>O que somos?</h1>
-                     <p>EL VERANO é uma empresa dedicada a oferecer os melhores produtos e serviços para nossos clientes. Com anos de experiência, buscamos sempre a qualidade e a satisfação do cliente.</p>
-
-                    <button class="button-cardapio"><a href="#cardapio">Cardápio</a></button>
-                </div>
-                <div class="img-home">
-                    <img class="img-home" src="/static/img/2.jpg" alt="">
-                </div>
-            </div>
-        </div>
-
-        <!-- Seção de Benefícios -->
-        <div class="beneficios" id="ofertas">
-            <h2>Benefícios de Comprar Conosco</h2>
-            <div class="beneficios-container">
-                <div class="beneficio">
-                    <i class="fa-solid fa-star"></i>
-                    <div>
-                        <h3>Qualidade Garantida</h3>
-                        <p>Oferecemos apenas os melhores produtos.</p>
-                    </div>
-                </div>
-                <div class="beneficio">
-                    <i class="fa-solid fa-truck-fast"></i>
-                    <div>
-                        <h3>Entrega Rápida</h3>
-                        <p>Receba seu pedido rapidamente.</p>
-                    </div>
-                </div>
-                <div class="beneficio">
-                    <i class="fa-solid fa-headset"></i>
-                    <div>
-                        <h3>Atendimento Personalizado</h3>
-                        <p>Nossa equipe está sempre disponível.</p>
-                    </div>
-                </div>
-                <div class="beneficio">
-                    <i class="fa-solid fa-tags"></i>
-                    <div>
-                        <h3>Descontos Exclusivos</h3>
-                        <p>Aproveite promoções especiais.</p>
-                    </div>
-                </div>
-                <div class="beneficio1">
-                    <i class="fa-solid fa-lock"></i>
-                    <div>
-                        <h3>Compra Segura</h3>
-                        <p>Garantimos a segurança.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Texto antes da seção OFERTAS -->
-        <div id="ofertas" class="ofertas-intro">
-            <h2>Confira nossos descontos</h2>
-        </div>
-
         <!-- Codigo das OFERTAS -->
         <div class="ofertas">
                 <div class="slider">
@@ -128,7 +68,51 @@
                 </div>
         </div>
 
+                <!-- Seção de Benefícios -->
+
+                <div class="beneficios" id="ofertas">
+                    <h2>Benefícios de Comprar Conosco</h2>
+                    <div class="beneficios-container">
+                        <div class="beneficio">
+                            <i class="fa-solid fa-star"></i>
+                            <div>
+                                <h3>Qualidade Garantida</h3>
+                                <p>Oferecemos apenas os melhores produtos.</p>
+                            </div>
+                        </div>
+                        <div class="beneficio">
+                            <i class="fa-solid fa-truck-fast"></i>
+                            <div>
+                                <h3>Entrega Rápida</h3>
+                                <p>Receba seu pedido rapidamente.</p>
+                            </div>
+                        </div>
+                        <div class="beneficio">
+                            <i class="fa-solid fa-headset"></i>
+                            <div>
+                                <h3>Atendimento Personalizado</h3>
+                                <p>Nossa equipe está sempre disponível.</p>
+                            </div>
+                        </div>
+                        <div class="beneficio">
+                            <i class="fa-solid fa-tags"></i>
+                            <div>
+                                <h3>Descontos Exclusivos</h3>
+                                <p>Aproveite promoções especiais.</p>
+                            </div>
+                        </div>
+                        <div class="beneficio1">
+                            <i class="fa-solid fa-lock"></i>
+                            <div>
+                                <h3>Compra Segura</h3>
+                                <p>Garantimos a segurança.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
         <!-- Texto antes da seção CARDÁPIO -->
+
         <div id="cardapio" class="cardapio-intro">
             <h1>Veja nosso cardápio</h1>
             <div class="filtro">
@@ -145,6 +129,7 @@
         </div>
 
         <!-- Codigo do CARDAPIO -->
+
         <div class="cardapio">
                 <div class="conteudo-cardapio">
                     {% for produto in produtos %}
@@ -159,7 +144,29 @@
                     </div>
                     {% endfor %}
                 </div>
+        </div>
+
+        <div id="ofertas" class="ofertas-intro">
+            <h2>Informações da Empresa</h2>
+        </div>
+
+        <!-- Codigo do HOME -->
+
+        <div id="home" class="home">
+            <div class="conteudo-home">
+                <div class="texto-home">
+                    <h1>O que somos?</h1>
+                     <p>Somos a EL VERANO, e estamos aqui para trazer a vocês o melhor em bebidas e lanches naturais. <br>
+                        Sabemos que muitas pessoas estão buscando um estilo de vida mais saudável, seja por questões de saúde ou estética. Pensando nisso, criamos a EL VERANO com o intuito de ajudar a comunidade de Rosário e regiões próximas a ter uma vida mais equilibrada.
+                        Queremos que nossos produtos sejam seus aliados na dieta, sem abrir mão do sabor! Estamos animados para que a EL VERANO se torne o seu cantinho favorito para escolhas saudáveis.</p>
+
+                    <button class="button-cardapio"><a href="#cardapio">Cardápio</a></button>
+                </div>
+                <div class="img-home">
+                    <img class="img-home" src="/static/img/2.jpg" alt="">
+                </div>
             </div>
+        </div>
     </main>
     <script src="/static/script.js"></script>
     <script src="/static/header-script.js"></script>
@@ -178,6 +185,24 @@
             <div class="footer-section">
                 <h3>Sobre a Empresa</h3>
                 <p>EL VERANO é uma empresa dedicada a oferecer os melhores produtos e serviços para nossos clientes. Com anos de experiência, buscamos sempre a qualidade e a satisfação do cliente.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Missão</h3>
+                <p>Oferecer produtos saudáveis e refrescantes que promovam bem-estar e satisfação, utilizando ingredientes naturais e de alta qualidade.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Visão</h3>
+                <p>Consolidar-se como a principal referência na área de lanches naturais do mercado rosariense, sendo reconhecida por promover um estilo de vida saudável, além de conectar pessoas por meio do sabor.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Valores</h3>
+                <p>-Bom atendimento;<br> 
+                    -Transparência; <br> 
+                    -Produto de qualidade; <br>
+                    -Diversidade e inclusão;<br>
+                    -Inovação e foco no cliente; <br>
+                    -Atenção aos detalhes;<br>
+                    -Criatividade.</p>
             </div>
         </div>
     </footer>

@@ -32,7 +32,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
     background-image: url("img/Background-do-site.jpg");
     /* background: var(--cor-secundaria); */
     color: var(--cor-terciaria);
@@ -125,7 +125,7 @@ body {
 /* Estilizando a parte dos benefícios */
 
 .beneficios {
-    background-color: #f1f2f3;
+
     padding: 50px 0;
     text-align: center;
 }
@@ -302,7 +302,6 @@ body {
     align-items: center;
     border-radius: 8px;
     margin: 0 auto;
-    margin-top: 40px;
     width: 530px;
     height: 100px;
     gap: 20px;
@@ -423,6 +422,7 @@ a{
 .nome-drink {
     font-family: var(--fonte-secundaria);
     text-align: center;
+    height: 100px;
     font-size: 24px;
     font-weight: 600;
     color: #333;
@@ -517,7 +517,8 @@ footer {
 }
 
 .footer-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
@@ -525,7 +526,7 @@ footer {
 }
 
 .footer-section {
-    width: 30%;
+    width: 90%;
 }
 
 .footer-section h3 {
@@ -544,6 +545,9 @@ footer {
 
 @media screen and (max-width: 1170px) {
     
+    .home{
+        height: 130vh;
+    }
     .conteudo-home {
         flex-direction: column-reverse;
         text-align: center;
@@ -587,6 +591,10 @@ footer {
         height: auto;
     }
 
+    .filtro{
+        width: 100%;
+    }
+
     .conteudo-cardapio {
         grid-template-columns: 1fr;
     }
@@ -613,6 +621,7 @@ footer {
     }
 
     .footer-container {
+        display: block;
         flex-direction: column;
         text-align: center;
     }
