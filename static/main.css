@@ -412,11 +412,19 @@ a{
     transform: scale(1.05);
 }
 
+.crdp-item a{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    border-bottom: 5px solid var(--cor-quartenaria);
+}
+
 .crdp-img1 {
     width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-bottom: 5px solid var(--cor-quartenaria);
+    height: auto; 
+    object-fit: contain;
+    background-color: #000;
+    border: solid 1px #000;
 }
 
 .nome-drink {
