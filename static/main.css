@@ -6,9 +6,11 @@
     --cor-primaria: #fff;
     --cor-secundaria: #f9f9f9;
     --cor-terciaria: #44434a;
-    --cor-quartenaria: #ff7f50;
-    --cor-buttons: linear-gradient(135deg, #ff7f50, #ff6347);
-    --cor-buttons-houver: linear-gradient(135deg, #d2663e, #ef4629);
+    --cor-quartenaria: #44434a;
+    --cor-buttons: #000;
+    /* --cor-buttons: linear-gradient(135deg, #ff7f50, #ff6347); */
+    /* --cor-buttons-houver: linear-gradient(135deg, #d2663e, #ef4629); */
+    --cor-buttons-houver: #44434a;
 
     --fonte-principal: 'Roboto', sans-serif;
     --fonte-secundaria: 'Poppins', sans-serif;
@@ -69,33 +71,6 @@ body {
     font-size: 20px;
     line-height: 1.6;
     margin-bottom: 30px;
-}
-
-.button-cardapio {
-    font-family: var(--fonte-secundaria);
-    background: var(--cor-buttons);
-    color: var(--cor-primaria);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 12px;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.button-cardapio a {
-    text-decoration: none;
-    color: var(--cor-primaria);
-}
-
-.button-cardapio:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-    background: var(--cor-buttons-houver);
 }
 
 /* Imagem em destaque no home */

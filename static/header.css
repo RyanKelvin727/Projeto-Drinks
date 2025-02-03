@@ -22,6 +22,11 @@
 
 /* Codes para arrumar o cabeçalho de navegação*/
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 header {
     position: sticky;
     top: 0;
@@ -44,10 +49,10 @@ header {
     align-items: center;
 }
 
-.logo h1 {
+.logo img{
     position: absolute;
-    font-size: 28px;
-    color: var(--cor-terciaria);
+    width: 120px;
+    height: 120px;
 }
 
 .nav-list {
@@ -160,30 +165,6 @@ header {
     font-weight: 400;
 }
 
-.mensagem-sucesso {
-    display: none; /* Inicialmente escondida */
-    background-color: #4CAF50; /* Fundo verde */
-    color: white; /* Texto branco */
-    padding: 15px 20px;
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    font-size: 16px;
-    align-items: center;
-    gap: 10px;
-    animation: fadeInOut 4s ease-in-out;
-}
-
-
-/* Ícone da mensagem */
-.mensagem-sucesso i {
-    font-size: 20px; /* Tamanho do ícone */
-}
-
 /* Animação para aparecer e desaparecer */
 @keyframes fadeInOut {
     0% {
@@ -208,10 +189,10 @@ header {
 
 @media screen and (max-width: 1170px) {
 
-    .logo h1{
-        font-size: 20px;
-        position: relative;
-        left: -60px;
+    .logo img{
+        width: 80px;
+        height: 80px;
+        left: 10px;
     }
 
     .menu-toggle {
