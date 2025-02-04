@@ -94,25 +94,6 @@ window.onresize = function(event) {
     reloadSlider();
 };
 
-// // Script do botão para adicionar mais produtos (Cardapio)
-// document.addEventListener('DOMContentLoaded', () => {
-//     const quantidadeInput = document.getElementById('quantidade');
-//     const botarButton = document.getElementById('botar');
-//     const tirarButton = document.getElementById('tirar');
-
-//     botarButton.addEventListener('click', () => {
-//         let currentValue = parseInt(quantidadeInput.value);
-//         quantidadeInput.value = currentValue + 1;
-//     });
-
-//     tirarButton.addEventListener('click', () => {
-//         let currentValue = parseInt(quantidadeInput.value);
-//         if (currentValue > 1) {
-//                 quantidadeInput.value = currentValue - 1;
-//         }
-//     });
-// });
-
 // Script do menu para celulares
 const menuToggle = document.querySelector('.menu-toggle');
 const navList = document.querySelector('.nav-list');
