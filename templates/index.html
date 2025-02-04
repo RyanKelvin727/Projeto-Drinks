@@ -52,19 +52,24 @@
         <div class="slider">
           <div class="list">
             <div class="item">
-              <img src="/static/img/1.png" alt="" />
+              <img class="img-desktop" src="/static/img/1.png" alt="" />
+              <img class="img-mobile" src="/static/img/mobile-1.png" alt="" />
             </div>
             <div class="item">
-              <img src="/static/img/3.png" alt="" />
+              <img class="img-desktop" src="/static/img/3.png" alt="" />
+              <img class="img-mobile" src="/static/img/mobile-2.png" alt="" />
             </div>
             <div class="item">
-              <img src="/static/img/4.png" alt="" />
+              <img class="img-desktop" src="/static/img/4.png" alt="" />
+              <img class="img-mobile" src="/static/img/mobile-3.png" alt="" />
             </div>
             <div class="item">
-              <img src="/static/img/5.png" alt="" />
+              <img class="img-desktop" src="/static/img/5.png" alt="" />
+              <img class="img-mobile" src="/static/img/mobile-4.png" alt="" />
             </div>
             <div class="item">
-              <img src="/static/img/6.png" alt="" />
+              <img class="img-desktop" src="/static/img/6.png" alt="" />
+              <img class="img-mobile" src="/static/img/mobile-3.png" alt="" />
             </div>
           </div>
           <div class="buttons">
@@ -150,15 +155,19 @@
             <a href="/item/{{ produto.id }}"
               ><img class="crdp-img1" src="{{ produto.image }}" alt=""
             /></a>
-            <div>
-              <h1 class="nome-drink">{{ produto.nome }}</h1>
-              <p class="desc-drink">{{ produto.descricao }}</p>
-              <h2 class="preco-drink">
-                R$ {{ produto.preco_desconto | round(2) }}
-              </h2>
-              <a href="/item/{{ produto.id }}"
-                ><button class="button-ver">Ver</button></a
-              >
+            <div class="conteudo-item">
+              <div>
+                <h1 class="nome-drink">{{ produto.nome }}</h1>
+                <p class="desc-drink">{{ produto.descricao }}</p>
+              </div>
+              <div>
+                <h2 class="preco-drink">
+                  R$ {{ produto.preco_desconto | round(2) }}
+                </h2>
+                <a href="/item/{{ produto.id }}"
+                  ><button class="button-ver">Ver</button></a
+                >
+              </div>
             </div>
           </div>
           {% endfor %}

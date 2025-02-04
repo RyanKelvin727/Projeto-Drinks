@@ -190,6 +190,14 @@ body {
     padding: 20px 0;
 }
 
+.img-mobile{
+    display: none;
+}
+
+.img-desktop{
+    display: block;
+}
+
 .slider {
     width: 80vw;
     height: 60vh;
@@ -368,6 +376,14 @@ body {
     padding: 0px 20px;
 }
 
+.conteudo-item{
+    display: flex;
+    height: 320px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .crdp-item{
     background-color: var(--cor-primaria);
     border-radius: 20px;
@@ -405,8 +421,9 @@ a{
 
 .nome-drink {
     font-family: var(--fonte-secundaria);
+    line-height: 1.2;
     text-align: center;
-    height: 100px;
+    margin-bottom: 10px;
     font-size: 24px;
     font-weight: 600;
     color: #333;
@@ -555,6 +572,10 @@ footer {
         height: 50vh;
     }
 
+    .beneficios h2{
+        font-size: 25px;
+    }
+
     .beneficio1{
         display: none;
     }
@@ -568,7 +589,15 @@ footer {
         width: 100%;
         height: 70vh;
     }
+
+    .img-mobile{
+        display: block;
+    }
     
+    .img-desktop{
+        display: none;
+    }
+
     .item img{
         width: 100%;
         max-width: 300px;
@@ -581,6 +610,10 @@ footer {
         left: -45px;
     }
 
+    .cardapio-intro h1{
+        font-size: 30px;
+    }
+
     .conteudo-cardapio {
         grid-template-columns: 1fr;
     }
@@ -590,11 +623,12 @@ footer {
     }
 
     .nome-drink {
-        font-size: 20px;
+        font-size: 30px;
+        line-height: 1;
     }
 
     .desc-drink {
-        font-size: 14px;
+        font-size: 20px;
     }
 
     .preco-drink {
