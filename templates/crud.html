@@ -90,12 +90,14 @@
                 <td class="price discount-price">R$ {{ produto.preco_desconto }}</td>
                 <td><img src="/{{ produto.image }}" alt="{{ produto.nome }}"></td>
                 <td>
-                    <a href="/crud/{{produto.id}}" class="btn btn-edit">
-                        <i class="fas fa-edit"></i> Editar
-                    </a>
-                    <a href="/delete/{{produto.id}}" onclick="return confirm('Deseja realmente excluir?')" class="btn btn-delete">
-                        <i class="fas fa-trash"></i> Excluir
-                    </a>
+                    <div class="butoes">
+                        <a href="/crud/{{produto.id}}" class="btn btn-edit">
+                            <i class="fas fa-edit"></i> Editar
+                        </a>
+                        <a href="/delete/{{produto.id}}" onclick="return confirm('Deseja realmente excluir?')" class="btn btn-delete">
+                            <i class="fas fa-trash"></i> Excluir
+                        </a>
+                    </div>
                 </td>
             </tr>
             {% endfor %}
